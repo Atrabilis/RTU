@@ -20,7 +20,7 @@ def iniciar_conexion(s,SERVER_IP,SERVER_PORT):
     else:
         print('Respuesta inesperada del servidor.')
 
-def detener_conexion(s):
+def detener_conexion_socket(s):
     #STOPDT act
     s.sendall(stopdt_act)
     # Recibir la respuesta del servidor (STOPDT Con)
