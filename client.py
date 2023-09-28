@@ -12,7 +12,7 @@ SERVER_PORT = 2404
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     iniciar_conexion(s,SERVER_IP,SERVER_PORT)
-    while True:
-        test_conection(s)
-        time.sleep(1)       
+    test_conection(s)
+    
+       
     

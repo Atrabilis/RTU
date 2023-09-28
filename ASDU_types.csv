@@ -1,0 +1,68 @@
+Type,Description,Reference,Format,Valid COTs
+1,Single point information,M_SP_NA_1,SIQ,2-3-5-11-20-20+G
+2,Single point information with time tag,M_SP_TA_1,SIQ+CP24Time2a,3-5-11-12
+3,Double point information,M_DP_NA_1,DIQ,2-3-5-11-12-20-20+G
+4,Double point information with time tag,M_DP_TA_1,DIQ+CP24Time2a,3-5-11-12
+5,Step position information,M_ST_NA_1,VTI + QDS,2-3-5-11-12-20-20+G
+6,Step position information with time tag,M_ST_TA_1,VTI+QDS+CP24Time2a,2-3-5-11-12
+7,Bit string of 32 bit,M_BO_NA_1,BSI+QDS,2-3-5-11-12-20-20+G
+8,Bit string of 32 bit with time tag,M_BO_TA_1,BSI + QDS + CP24Time2a,3-5
+9,Measured value- normalized value,M_ME_NA_1,NVA + QDS,2-3-5-11-12-20-20+G
+10,Measured value- normalized value with time tag,M_ME_TA_1,NVA + QDS + CP24Time2a,3-5
+11,Measured value- scaled value,M_ME_NB_1,SVA + QDS,2-3-5-11-12-20-20+G
+12,Measured value- scaled value with time tag,M_ME_TB_1,SVA + QDS + CP24Time2a,3-5
+13,Measured value- short floating point value,M_ME_NC_1,IEEE STD 754+QDS,2-3-5-11-12-20-20+G
+14,Measured value- short floating point value with time tag,M_ME_TC_1,IEEE STD 754+QDS + CP24Time2a,2-3-5-11-12-20-20+G
+15,Integrated totals,M_IT_NA_1,BCR,2-37-37+G
+16,Integrated totals with time tag,M_IT_TA_1,BCR + CP24Time2a,3-37-37+G
+17,Event of protection equipment with time tag,M_EP_TA_1,CP16Time2a + CP24Time2a,3
+18,Packed start events of protection equipment with time tag,M_EP_TB_1,SEP + QDP +C P16Time2a + CP24Time2a,3
+19,Packed output circuit information of protection equipment with time tag,M_EP_TC_1,OCl+QDP+CP16Time2a+CP24Time2a,3
+20,Packed single-point information with status change detection,M_PS_NA_1,SCD+QDS,2-3-5-11-12-20-20+G
+21,Measured value- normalized value without quality descriptor,M_ME_ND_1,NVA,1-2-3-5-11-12-20-20+G
+30,Single point information with time tag CP56Time2a,M_SP_TB_1,SIQ+CP56Time2a,3-5-11-12
+31,Double point information with time tag CP56Time2a,M_DP_TB_1,DIQ+CP56Time2a,3-5-11-12
+32,Step position information with time tag  CP56Time2a,M_ST_TB_1,VTI + QDS +  CP56Time2a,2-3-5-11-12
+33,Bit string of 32 bit with time tag CP56Time 2a,M_BO_TB_1,BSI + QDS + CP56Time2a,3-5
+34,Measured value- normalized value with time tag CP56Time2a,M_ME_TD_1,NVA + QDS + CP56Time2a,3-5
+35,Measured value- scaled value with time tag CP56Time2a,M_ME_TE_1,SVA + QDS + CP56Time2a,3-5
+36,Measured value- short floating point value with time tag CP56Time2a,M_ME_TF_1,IEEE STD 754+QDS + CP56Time2a,2-3-5-11-12-20-20+G
+37,Integrated totals with time tag CP56Time2a,M_IT_TB_1,BCR + CP56Time2a,3-37-37+G
+38,Event of protection equipment with time tag CP56Time2a,M_EP_TD_1,CP16Time2a + CP56Time2a,3
+39,Packed start events of protection equipment with time tag CP56time2a,M_EP_TE_1,SEP + QDP + CP16Time2a + CP56Time2a,3
+40,Packed output circuit information of protection equipment with time tag CP56Time2a,M_EP_TF_1,OCl+ QDP + CP16Time2a + CP56Time2a,3 Process information in control direction :,,,,
+45,Single command,C_SC_NA_1,SCO,6-7-8-9-10-44-45-46-47
+46,Double command,C_DC_NA_1,DCO,6-7-8-9-10-44-45-46-47
+47,Regulating step command,C_RC_NA_1,RCO,6-7-8-9-10-44-45-46-47
+48,Setpoint command- normalized value,C_SE_NA_1,NVA + QOS,6-7-8-9-10-44-45-46-47
+49,Setpoint command- scaled value,C_SE_NB_1,SVA + QOS,6-7-8-9-10-44-45-46-47
+50,Setpoint command- short floating point value,C_SE_NC_1,IEEE STD 754+QOS,6-7-8-9-10-44-45-46-47
+51,Bit string 32 bit,C_BO_NA_1,BSI,6-7-8-9-10-44-45-46-47
+58,Single command with time tag CP56Time2a,C_SC_TA_1,,
+59,Double command with time tag CP56Time2a,C_DC_TA_1,,
+60,Regulating step command with time tag CP56Time2a,C_RC_TA_1,,
+61,Setpoint command- normalized value with time tag CP56Time2a,C_SE_TA_1,,
+62,Setpoint command- scaled value with time tag CP56Time2a,C_SE_TB_1,,
+63,Setpoint command- short floating point value with time tag CP56Time2a,C_SE_TC_1,,
+64,Bit string 32 bit with time tag CP56Time2a,C_BO_TA_1,,
+70,End of initialization,M_EI_NA_1,COI,4
+100,(General-) Interrogation command,C_IC_NA_1,QOI,6-7-8-9-10-44-45-46-47
+101,Counter interrogation command,C_Cl_NA_1,QCC,6-7-8-9-10-44-45-46-47
+102,Read command,C_RD_NA_1,null,5
+103,Clock synchronization command,C_CS_NA_1,CP56Time2a,3-6-7-44-45-46-47
+104,(IEC 101) Test command,C_TS_NB_1,FBP,6-7-44-45-46-47
+105,Reset process command,C_RP_NC_1,QRP,6-7-44-45-46-47
+106,(IEC 101) Delay acquisition command,C_CD_NA_1,CP16Time2a,6-7-44-45-46-47
+107,Test command with time tag CP56Time2a,C_TS_TA_1,,
+110,Parameter of measured value- normalized value,P_ME_NA_1,NVA+QPM,6-7-9-10-20-20+G-44-45-46-47
+111,Parameter of measured value- scaled value,P_ME_NB_1,SVA + QPM,6-7-20-20+G-44-45-46-47
+112,Parameter of measured value- short floating point value,P_ME_NC_1,IEEE STD 754+QPM,6-7-20-20+G-44-45-46-47
+113,Parameter activation,P_AC_NA_1,QPA,6-7-8-9-44-45-46-47
+120,File ready,F_FR_NA_1,NOF+LOF+FRQ,13
+121,Section ready,F_SR_NA_1,NOF + NOS + LOF + SRQ,13
+122,Call directory- select file- call file- call section,F_SC_NA_1,NOF+NOS+SCQ,5-13
+123,Last section- last segment,F_LS_NA_1,NOF+NOS+LSQ+CHS,13
+124,Ack file- Ack section,F_AF_NA_1,NOF+NOS+AFQ,13
+125,Segment,F_SG_NA_1,NOF+NOS+LOS+segment,13
+126,Directory,F_DR_TA_1,NOF+LOF+SOF+CP56Time2a,3-5
+127,QueryLog - Request archive file,F_SC_NB_1,,
