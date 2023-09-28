@@ -30,4 +30,7 @@ solicitud_act = b'\x68\x04\x09\x00\x00\x00'
 # Confirmación de Enlace Activo (ACT CON)
 confirmacion_act_con = b'\x68\x04\x0F\x00\x00\x00'
 
-# Puedes usar estas tramas según tus necesidades en tu aplicación IEC 60870-5-104.
+#ASDU types:
+C_IC_NA_1= bytes([100])
+
+
