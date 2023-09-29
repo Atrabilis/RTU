@@ -1,9 +1,11 @@
 import pandas as pd
 
 ASDU_TYPES_CSV = 'ASDU_types.csv'
+COT_VALUES_CSV = 'COT_values.csv'
 
 def analizar_iec104(mensaje, direccion):
     asdu_types_df = pd.read_csv(ASDU_TYPES_CSV)
+    cot_values_df = pd.read_csv(COT_VALUES_CSV)
 
     if len(mensaje) < 4:
         return {"error": "Mensaje demasiado corto", "direccion": direccion}
@@ -19,6 +21,9 @@ def analizar_iec104(mensaje, direccion):
     apdu_format = "I" if (cf1 & 0x01) == 0 else "S" if (cf1 & 0x03) == 1 else "U"
     u_type = None
     type_id = None
+    org = None
+    asdu_address = None
+    info_objects = None
 
     if apdu_format == "U":
         if cf1 == 0x43:
@@ -48,15 +53,38 @@ def analizar_iec104(mensaje, direccion):
             t = (third_byte & 0x80) >> 7
             pn = (third_byte & 0x40) >> 6
             cot = third_byte & 0x3F
+        
+        if len(asdu) > 3:
+            org = asdu[3]  # Originator Address en la posición 3 de asdu
+
+        if len(asdu) > 5:
+            asdu_address = (asdu[4] << 8) | asdu[5]  # ASDU Address Fields en las posiciones 4 y 5 de asdu
+        
+        if len(asdu) > 6:
+            info_objects_bytes = asdu[6:]  # Los bytes restantes son Information Objects
+
+            if sq == 1:  # si sq==1, considera todos los bytes como un solo Information Object
+                info_objects = [info_objects_bytes]
+            else:
+                info_objects = [
+                    info_objects_bytes[i:i+5] for i in range(0, len(info_objects_bytes), 5)
+                ]  # Divide los bytes en bloques de 5
+        else:
+            info_objects = []            
 
         type_info = asdu_types_df[asdu_types_df['Type'] == type_id]
+        cot_info = cot_values_df[cot_values_df['Code']==cot]
         if not type_info.empty:
             description = type_info['Description'].values[0]
             reference = type_info['Reference'].values[0]
         else:
             description = reference = "Unknown"
+        if not cot_info.empty:
+            cot_name = cot_info['Cause of Transmission'].values[0]
+            cot_abbr = cot_info['Abbreviation'].values[0]
     else:
         description = reference = sq = num_objects = t = pn = cot = None
+        cot_name = cot_abbr = None
 
     return {
         "direccion": direccion,
@@ -73,7 +101,11 @@ def analizar_iec104(mensaje, direccion):
             "t": t,
             "pn": pn,
             "cot": cot,
-            "data": asdu[3:]  # actualiza esto para evitar sobrescribir el tercer byte
+            "cot_name":cot_name,
+            "cot_abbr":cot_abbr,
+            "org": org,
+            "asdu_address": asdu_address,
+            "info_objects": info_objects,  # se actualizó para evitar sobrescribir los bytes org y asdu_address
         }
     }
 
@@ -88,14 +120,20 @@ def imprimir_resultados(resultados):
         if resultados['apdu_format'] == 'I':
             print(f"  ASDU:")
             print(f"    Type ID: {resultados['asdu']['type_id']}")
+            print(f"    Descripción ID: {resultados['asdu']['description']}")
+            print(f"    Referencia ID: {resultados['asdu']['reference']}")
             print(f"    SQ: {resultados['asdu']['sq']}")
             print(f"    Number of Objects: {resultados['asdu']['num_objects']}")
             print(f"    T: {resultados['asdu']['t']}")
             print(f"    PN: {resultados['asdu']['pn']}")
             print(f"    COT: {resultados['asdu']['cot']}")
-            print(f"    Descripción: {resultados['asdu']['description']}")
-            print(f"    Referencia: {resultados['asdu']['reference']}")
-            print(f"    Datos: {resultados['asdu']['data']}")
+            print(f"    Nombre COT: {resultados['asdu']['cot_name']}")
+            print(f"    Abreviación COT: {resultados['asdu']['cot_abbr']}")
+            print(f"    ORG: {resultados['asdu']['org']}")
+            print(f"    ASDU Address: {resultados['asdu']['asdu_address']}")
+            print(f"    Objetos de Información:")
+            for i, info_obj in enumerate(resultados['asdu']['info_objects'], 1):
+                print(f"      Objeto {i}: {info_obj}")
         elif resultados['apdu_format'] == 'U':
             print(f"  Tipo de mensaje U: {resultados['u_type']}")
 
