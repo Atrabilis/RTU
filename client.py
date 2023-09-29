@@ -7,11 +7,20 @@ SERVER_IP = 'localhost'  # Change this to the RTU's IP address
 SERVER_PORT = 2404
 
 # Configure the T3 time for the interrogation
-INTERROGATION_INTERVAL = 1  # 60 seconds (adjust as needed)
+INTERROGATION_INTERVAL = 0.2  # 60 seconds (adjust as needed)
 
-def send_interrogation_apdu(client_socket, increment):
+def send_gnrl_interrogation_apdu(client_socket, increment):
     # Incrementar el quinto byte en el APDU
     interrogation_apdu = bytearray(b'\x68\x04\x01\x00\x00\x00')
+    interrogation_apdu[4] = (interrogation_apdu[4] + increment) & 0xFF  # Incrementa el quinto byte
+
+    # Send the Interrogation General APDU
+    client_socket.send(interrogation_apdu)
+    
+def send_ctr_interrogation_apdu(client_socket, increment):
+    # Incrementar el quinto byte en el APDU
+    interrogation_apdu = bytearray(b'\x68\x0e\x00\x00\x00\x00\x65\x01\x06\x00\xff\xff\x00\x00\x00\x05')
+    interrogation_apdu[2] = (interrogation_apdu[4] + increment) & 0xFF
     interrogation_apdu[4] = (interrogation_apdu[4] + increment) & 0xFF  # Incrementa el quinto byte
 
     # Send the Interrogation General APDU
@@ -30,14 +39,18 @@ def main():
             print(f"Connected to {SERVER_IP}:{SERVER_PORT}")
             time.sleep(1)
             while True:
+                received_data = client_socket.recv(1024)  # Adjust the buffer size as needed
+                if received_data == b'\x68\x04\x43\x00\x00\x00':
+                    # If a specific pattern is received, send the desired data
+                    client_socket.send(b'\x68\x04\x83\x00\x00\x00')
+                    
                 # Send the Interrogation General APDU with the current incremento
-                send_interrogation_apdu(client_socket, incremento)
+                send_gnrl_interrogation_apdu(client_socket, incremento)
+                send_ctr_interrogation_apdu(client_socket,incremento)
 
                 # Receive data from the RTU
-                received_data = client_socket.recv(1024)  # Adjust the buffer size as needed
-
                 # Process or print the received data as needed
-                print(f"Received data: {received_data}")  # Assuming UTF-8 encoding
+                print(f"R<- {client_socket.recv(1024)}")  # Assuming UTF-8 encoding
 
                 # Incrementar el valor del incremento
                 incremento += 2
