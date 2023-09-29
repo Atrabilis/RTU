@@ -1,35 +1,26 @@
-import re
 import pandas as pd
 
 ASDU_TYPES_CSV = 'ASDU_types.csv'
 
-def analizar_iec104(mensaje):
-    # Leer el archivo CSV
+def analizar_iec104(mensaje, direccion):
     asdu_types_df = pd.read_csv(ASDU_TYPES_CSV)
 
-    # Verificar la longitud del mensaje
     if len(mensaje) < 4:
-        return "Mensaje demasiado corto"
+        return {"error": "Mensaje demasiado corto", "direccion": direccion}
 
-    # Extraer el campo de inicio y de longitud
     start_field = mensaje[0]
-    length_field = mensaje[1]
 
-    # Verificar el campo de inicio
     if start_field != 0x68:
-        return "Campo de inicio inválido"
+        return {"error": "Campo de inicio inválido", "direccion": direccion}
 
-    # Extraer el campo de control (CF)
-    control_field = mensaje[2:6]  # Corrección aquí
+    control_field = mensaje[2:6]
 
-    # Determinar el formato de la APDU
     cf1 = control_field[0]
     apdu_format = "I" if cf1 & 0x03 == 0 else "S" if cf1 & 0x03 == 1 else "U"
     u_type = None
     type_id = None
 
     if apdu_format == "U":
-        # Determinar el tipo de mensaje U
         if cf1 == 0x43:
             u_type = "Test Frame Activation"
         elif cf1 == 0x83:
@@ -43,18 +34,13 @@ def analizar_iec104(mensaje):
         elif cf1 == 0x0B:
             u_type = "Start Data Transfer Confirmation"
 
-    # Extraer el campo de datos (ASDU)
-    asdu = mensaje[6:]  # Corrección aquí
+    asdu = mensaje[6:]
 
     if apdu_format == "I":
-        # Extraer el Type Identification para formato I
         type_id = asdu[0]
-        
-        # Buscar la Description y la Reference en el DataFrame
         type_info = asdu_types_df[asdu_types_df['Type'] == type_id]
         if not type_info.empty:
             description = type_info['Description'].values[0]
-            print(description)
             reference = type_info['Reference'].values[0]
         else:
             description = reference = "Unknown"
@@ -62,8 +48,8 @@ def analizar_iec104(mensaje):
         description = reference = None
 
     return {
+        "direccion": direccion,
         "start_field": start_field,
-        "length_field": length_field,
         "control_field": control_field,
         "apdu_format": apdu_format,
         "u_type": u_type,
@@ -71,41 +57,55 @@ def analizar_iec104(mensaje):
             "type_id": type_id,
             "description": description,
             "reference": reference,
-            "data": asdu[1:]  # Datos restantes de la ASDU
+            "data": asdu[1:]
         }
     }
 
 
+def imprimir_resultados(resultados):
+    print(f"Dirección: {resultados['direccion']}")
+    if "error" in resultados:
+        print(f"Análisis: {resultados['error']}")
+    else:
+        print(f"Análisis:")
+        print(f"  Formato APDU: {resultados['apdu_format']}")
+        print(f"  Control Field: {resultados['control_field']}")
+        if resultados['apdu_format'] == 'I':
+            print(f"  ASDU:")
+            print(f"    Type ID: {resultados['asdu']['type_id']}")
+            print(f"    Descripción: {resultados['asdu']['description']}")
+            print(f"    Referencia: {resultados['asdu']['reference']}")
+            print(f"    Datos: {resultados['asdu']['data']}")
+        elif resultados['apdu_format'] == 'U':
+            print(f"  Tipo de mensaje U: {resultados['u_type']}")
+    print("--------------------------------------------------")
+
+
 def analizar_archivo(nombre_archivo):
-    # Leer el archivo línea por línea
     with open(nombre_archivo, 'r') as archivo:
         lineas = archivo.readlines()
 
-    # Iterar sobre cada línea y extraer la secuencia de bytes
     secuencias_bytes = []
+    direcciones = []
     for linea in lineas:
-        # Buscar la posición de -> o <- en la línea
         pos = linea.find('->')
-        if pos == -1:
-            pos = linea.find('<-')
         if pos != -1:
-            # Extraer la secuencia de bytes de la línea
+            direccion = "Enviado"
+        else:
+            pos = linea.find('<-')
+            direccion = "Recibido"
+        if pos != -1:
             bytes_hex = linea[pos+2:].strip()
             secuencias_bytes.append(bytes_hex)
+            direcciones.append(direccion)
 
-    # Iterar sobre cada secuencia de bytes y analizar
     resultados = []
-    for bytes_hex in secuencias_bytes:
-        # Convertir la secuencia de bytes a un objeto bytes real
+    for bytes_hex, direccion in zip(secuencias_bytes, direcciones):
         bytes_real = bytes.fromhex(bytes_hex)
-        # Analizar la secuencia de bytes con la función analizar_iec104
-        resultado = analizar_iec104(bytes_real)
-        # Almacenar el resultado
+        resultado = analizar_iec104(bytes_real, direccion)
         resultados.append(resultado)
 
-    # Mostrando los resultados
     for res in resultados:
-        print(res)
+        imprimir_resultados(res)
 
-# Llamar a la función analizar_archivo
 analizar_archivo('traffic_test.txt')

@@ -30,7 +30,7 @@ Type,Description,Reference,Format,Valid COTs
 37,Integrated totals with time tag CP56Time2a,M_IT_TB_1,BCR + CP56Time2a,3-37-37+G
 38,Event of protection equipment with time tag CP56Time2a,M_EP_TD_1,CP16Time2a + CP56Time2a,3
 39,Packed start events of protection equipment with time tag CP56time2a,M_EP_TE_1,SEP + QDP + CP16Time2a + CP56Time2a,3
-40,Packed output circuit information of protection equipment with time tag CP56Time2a,M_EP_TF_1,OCl+ QDP + CP16Time2a + CP56Time2a,3 Process information in control direction :,,,,
+40,Packed output circuit information of protection equipment with time tag CP56Time2a,M_EP_TF_1,OCl+ QDP + CP16Time2a + CP56Time2a,3 
 45,Single command,C_SC_NA_1,SCO,6-7-8-9-10-44-45-46-47
 46,Double command,C_DC_NA_1,DCO,6-7-8-9-10-44-45-46-47
 47,Regulating step command,C_RC_NA_1,RCO,6-7-8-9-10-44-45-46-47
