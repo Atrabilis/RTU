@@ -1,20 +1,51 @@
-import os
-import sys
-sys.path.insert(0, os.getcwd())
-from iec104_control_frames import *
 import socket
+import time
 from funciones import *
 
-# Configuración del servidor (RTU)
-SERVER_IP = 'localhost'  # Cambia esto a la IP del servidor si es necesario
+# Configuration for the server (RTU)
+SERVER_IP = 'localhost'  # Change this to the RTU's IP address
 SERVER_PORT = 2404
 
-with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-    s.connect((SERVER_IP,SERVER_PORT))
-    probar_conexion(s)
-    iniciar_conexion(s,SERVER_IP,SERVER_PORT)
+# Configure the T3 time for the interrogation
+INTERROGATION_INTERVAL = 10  # 60 seconds (adjust as needed)
+
+def send_interrogation_apdu(client_socket):
+    # Define the Interrogation General APDU
+    interrogation_apdu = b'\x68\x0e\x14\x00\x34\x00\x64\x01\x06\x00\xff\xff\x00\x00\x00\x14'  # Adjust this according to your specific requirements
     
-    
-    
-       
-    
+    # Send the Interrogation General APDU
+    client_socket.send(interrogation_apdu)
+
+def main():
+    start_time = time.time()  # Record the start time
+
+    # Create a socket for the client
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
+        try:
+            # Connect to the server (RTU)
+            client_socket.connect((SERVER_IP, SERVER_PORT))
+            iniciar_conexion(client_socket, SERVER_IP, SERVER_PORT)
+            print(f"Connected to {SERVER_IP}:{SERVER_PORT}")
+            time.sleep(1)
+            while True:
+                # Send the Interrogation General APDU
+                send_interrogation_apdu(client_socket)
+
+                # Receive data from the RTU
+                received_data = client_socket.recv(1024)  # Adjust the buffer size as needed
+
+                # Process or print the received data as needed
+                print(f"Received data: {received_data}")  # Assuming UTF-8 encoding
+
+                # Sleep for the interrogation interval before sending the next APDU
+                time.sleep(INTERROGATION_INTERVAL)
+
+        except Exception as e:
+            print(f"An error occurred: {str(e)}")
+        finally:
+            end_time = time.time()  # Record the end time when the connection ends
+            connection_duration = end_time - start_time
+            print(f"Connection duration: {connection_duration} seconds")
+
+if __name__ == "__main__":
+    main()

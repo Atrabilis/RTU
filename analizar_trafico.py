@@ -159,7 +159,8 @@ def analizar_archivo(nombre_archivo):
         resultado = analizar_iec104(bytes_real, direccion)
         resultados.append(resultado)
 
-    for res in resultados:
+    for idx,res in enumerate(resultados):
+        print(secuencias_bytes[idx])
         imprimir_resultados(res)
 
 analizar_archivo('traffic_test.txt')
