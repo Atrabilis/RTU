@@ -61,14 +61,7 @@ def analizar_iec104(mensaje, direccion):
             asdu_address = (asdu[4] << 8) | asdu[5]  # ASDU Address Fields en las posiciones 4 y 5 de asdu
         
         if len(asdu) > 6:
-            info_objects_bytes = asdu[6:]  # Los bytes restantes son Information Objects
-
-            if sq == 1:  # si sq==1, considera todos los bytes como un solo Information Object
-                info_objects = [info_objects_bytes]
-            else:
-                info_objects = [
-                    info_objects_bytes[i:i+5] for i in range(0, len(info_objects_bytes), 5)
-                ]  # Divide los bytes en bloques de 5
+            info_objects = asdu[6:]  # Los bytes restantes son Information Objects
         else:
             info_objects = []            
 
@@ -131,9 +124,7 @@ def imprimir_resultados(resultados):
             print(f"    Abreviación COT: {resultados['asdu']['cot_abbr']}")
             print(f"    ORG: {resultados['asdu']['org']}")
             print(f"    ASDU Address: {resultados['asdu']['asdu_address']}")
-            print(f"    Objetos de Información:")
-            for i, info_obj in enumerate(resultados['asdu']['info_objects'], 1):
-                print(f"      Objeto {i}: {info_obj}")
+            print(f"    Objetos de Información: {resultados['asdu']['info_objects']}")
         elif resultados['apdu_format'] == 'U':
             print(f"  Tipo de mensaje U: {resultados['u_type']}")
 
