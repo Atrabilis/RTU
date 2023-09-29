@@ -13,9 +13,9 @@ def analizar_iec104(mensaje, direccion):
     if start_field != 0x68:
         return {"error": "Campo de inicio inválido", "direccion": direccion}
 
-    control_field = mensaje[2:6]
+    control_field = mensaje[2]
 
-    cf1 = control_field[0]
+    cf1 = control_field
     apdu_format = "I" if (cf1 & 0x01) == 0 else "S" if (cf1 & 0x03) == 1 else "U"
     u_type = None
     type_id = None
@@ -38,6 +38,17 @@ def analizar_iec104(mensaje, direccion):
 
     if apdu_format == "I":
         type_id = asdu[0]
+        if len(asdu) > 1:
+            second_byte = asdu[1]
+            sq = (second_byte & 0x80) >> 7
+            num_objects = second_byte & 0x7F
+
+        if len(asdu) > 2:
+            third_byte = asdu[2]
+            t = (third_byte & 0x80) >> 7
+            pn = (third_byte & 0x40) >> 6
+            cot = third_byte & 0x3F
+
         type_info = asdu_types_df[asdu_types_df['Type'] == type_id]
         if not type_info.empty:
             description = type_info['Description'].values[0]
@@ -45,7 +56,7 @@ def analizar_iec104(mensaje, direccion):
         else:
             description = reference = "Unknown"
     else:
-        description = reference = None
+        description = reference = sq = num_objects = t = pn = cot = None
 
     return {
         "direccion": direccion,
@@ -57,10 +68,14 @@ def analizar_iec104(mensaje, direccion):
             "type_id": type_id,
             "description": description,
             "reference": reference,
-            "data": asdu[1:]
+            "sq": sq,
+            "num_objects": num_objects,
+            "t": t,
+            "pn": pn,
+            "cot": cot,
+            "data": asdu[3:]  # actualiza esto para evitar sobrescribir el tercer byte
         }
     }
-
 
 def imprimir_resultados(resultados):
     print(f"Dirección: {resultados['direccion']}")
@@ -73,17 +88,27 @@ def imprimir_resultados(resultados):
         if resultados['apdu_format'] == 'I':
             print(f"  ASDU:")
             print(f"    Type ID: {resultados['asdu']['type_id']}")
+            print(f"    SQ: {resultados['asdu']['sq']}")
+            print(f"    Number of Objects: {resultados['asdu']['num_objects']}")
+            print(f"    T: {resultados['asdu']['t']}")
+            print(f"    PN: {resultados['asdu']['pn']}")
+            print(f"    COT: {resultados['asdu']['cot']}")
             print(f"    Descripción: {resultados['asdu']['description']}")
             print(f"    Referencia: {resultados['asdu']['reference']}")
             print(f"    Datos: {resultados['asdu']['data']}")
         elif resultados['apdu_format'] == 'U':
             print(f"  Tipo de mensaje U: {resultados['u_type']}")
+
     print("--------------------------------------------------")
 
 
 def analizar_archivo(nombre_archivo):
-    with open(nombre_archivo, 'r') as archivo:
-        lineas = archivo.readlines()
+    try:
+        with open(nombre_archivo, 'r') as archivo:
+            lineas = archivo.readlines()
+    except FileNotFoundError:
+        print(f"El archivo {nombre_archivo} no se encontró.")
+        return
 
     secuencias_bytes = []
     direcciones = []

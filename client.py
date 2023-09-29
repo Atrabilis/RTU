@@ -10,8 +10,11 @@ SERVER_IP = 'localhost'  # Cambia esto a la IP del servidor si es necesario
 SERVER_PORT = 2404
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+    s.connect((SERVER_IP,SERVER_PORT))
+    probar_conexion(s)
     iniciar_conexion(s,SERVER_IP,SERVER_PORT)
-    test_conection(s)
+    
+    
     
        
     

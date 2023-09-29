@@ -1,0 +1,42 @@
+Code,Cause of Transmission,Abbreviation
+1,periodic- cyclic,per//cyc
+2,background interrogation,back
+3,spontaneous,spont
+4,initialized,init
+5,interrogation or interrogated,req
+6,activation,act
+7,confirmation activation,actcon
+8,deactivation,deact
+9,confirmation deactivation,deactcon
+10,termination activation,actterm
+11,feedback- caused by distant command,retrem
+12,feedback- caused by local command,retloc
+13,data transmission,file
+20,interrogated by general interrogation,inrogen
+21,interrogated by interrogation group 1,inro1
+22,interrogated by interrogation group 2,inro2
+23,interrogated by interrogation group 3,inro3
+24,interrogated by interrogation group 4,inro4
+25,interrogated by interrogation group 5,inro5
+26,interrogated by interrogation group 6,inro6
+27,interrogated by interrogation group 7,inro7
+28,interrogated by interrogation group 8,inro8
+29,interrogated by interrogation group 9,inro9
+30,interrogated by interrogation group 10,inro10
+31,interrogated by interrogation group 11,inro11
+32,interrogated by interrogation group 12,inro12
+33,interrogated by interrogation group 13,inro13
+34,interrogated by interrogation group 14,inro14
+35,interrogated by interrogation group 15,inro15
+36,interrogated by interrogation group 16,inro16
+37,interrogated by counter general interrogation,reqcogen
+38,interrogated by interrogation counter group 1,reqco1
+39,interrogated by interrogation counter group 2,reqco 2
+40,interrogated by interrogation counter group 3,reqco3
+41,interrogated by interrogation counter group 4,reqco4
+42,interrogated by interrogation counter group 4,reqco5
+43,interrogated by interrogation counter group 4,reqco6
+44,type-Identification unknown,uknown_type
+45,cause unknown,uknown_cause
+46,ASDU address unknown,unknown_asdu_address
+47,Information object address unknown,unknown_object_address
