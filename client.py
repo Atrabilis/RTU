@@ -3,7 +3,6 @@ import sys
 sys.path.insert(0, os.getcwd())
 from iec104_control_frames import *
 import socket
-import time
 from funciones import *
 
 # Configuración del servidor (RTU)
