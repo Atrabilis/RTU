@@ -16,7 +16,7 @@ def analizar_iec104(mensaje, direccion):
     control_field = mensaje[2:6]
 
     cf1 = control_field[0]
-    apdu_format = "I" if cf1 & 0x03 == 0 else "S" if cf1 & 0x03 == 1 else "U"
+    apdu_format = "I" if (cf1 & 0x01) == 0 else "S" if (cf1 & 0x03) == 1 else "U"
     u_type = None
     type_id = None
 
