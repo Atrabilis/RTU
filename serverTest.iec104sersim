@@ -1,6 +1,6 @@
 21.05.026
 1
-Stopped
+Created
 127.0.0.1
 2404
 0.0.0.0
@@ -40,29 +40,5 @@ COT_TWO_BYTE
 0.0.0.0
 0.0.0.0
 0.0.0.0
-3
 1
-Single Point
-M_SP_NA_1 = 1
-1
-3
-INROGEN = 20
-1
-STATUS_ONLY
-0
-PARAMETER_NONE
-1
-0
-2
-Step Position
-M_ST_NA_1 = 5
-10
-4
-INROGEN = 20
-1
-STATUS_ONLY
-0
-PARAMETER_NONE
-1
-0
 0
