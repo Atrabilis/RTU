@@ -1,10 +1,10 @@
 import pandas as pd
 from funciones import *
+import os
 
 # Constantes para los archivos CSV
 ASDU_TYPES_CSV = 'ASDU_types.csv'
 COT_VALUES_CSV = 'COT_values.csv'
-
 
 def analizar_iec104(mensaje, direccion):
     # Inicializar todas las variables que se usan más adelante
@@ -21,14 +21,13 @@ def analizar_iec104(mensaje, direccion):
     cot_name = None
     cot_abbr = None
     u_type = None
+    info_objects = []
+    element_len = None
     
     # Cargar DataFrames para los tipos de ASDU y los valores de COT
     asdu_types_df = pd.read_csv(ASDU_TYPES_CSV)
     cot_values_df = pd.read_csv(COT_VALUES_CSV)
-
-    # Constantes
-    LONGITUD_DIRECCION = 3
-
+    
     # Inicialización de variables
     start_field = mensaje[0]
     control_field = mensaje[2]
@@ -52,7 +51,7 @@ def analizar_iec104(mensaje, direccion):
             raise Exception("ASDU demasiado corto")
 
         # Decodificar campos de ASDU
-        type_id, sq, num_objects, t, pn, cot, org, asdu_address = decode_asdu_fields(asdu)
+        type_id, sq, num_objects, t, pn, cot, org, asdu_address, info_objects, element_len = decode_asdu_fields(asdu)
 
         # Obtener información adicional de los DataFrames
         type_info, cot_info, description, reference, cot_name, cot_abbr = get_additional_info(
@@ -61,7 +60,7 @@ def analizar_iec104(mensaje, direccion):
     # Preparar el resultado
     
     result = prepare_result(direccion, start_field, control_field, apdu_format, u_type, type_id, sq, num_objects,
-                            t, pn, cot, org, asdu_address, description, reference, cot_name, cot_abbr)
+                            t, pn, cot, org, asdu_address, description, reference, cot_name, cot_abbr, info_objects, element_len)
 
     return result
 
@@ -79,8 +78,35 @@ def decode_u_type(cf1):
     return u_type_dict.get(cf1)
 
 
+def decode_info_objects(info_objects, sq, type_id):
+    element_length = sum(ELEMENT_LENGTHS[element] for element in ASDU_FORMATS[type_id])
+    info_objects_list = []
+    index = 0
+    if sq == 1:
+        info_object_address = (info_objects[0] << 16) | (info_objects[1] << 8) | info_objects[2]
+        info_elements = info_objects[3:]
+        index += 3
+        while index+1 < len(info_elements):
+            info_element = info_elements[index:index+element_length]
+            info_objects_list.append([info_object_address,info_element])
+            index += element_length
+
+    elif sq == 0:
+        while index < len(info_objects):
+            info_object_address = (info_objects[index] << 16) | (info_objects[index + 1] << 8) | info_objects[index + 2]
+            index += 3  # mover el índice después de la dirección del objeto de información
+            
+            # Calcular la longitud de los elementos de información
+            info_elements = info_objects[index:index + element_length]
+            index += element_length  # mover el índice después de los elementos de información
+
+            info_objects_list.append((info_object_address, info_elements))
+    
+
+    return element_length, info_objects_list
+
+
 def decode_asdu_fields(asdu):
-    # Decodificar campos de ASDU
     type_id = asdu[0]
     second_byte = asdu[1]
     sq = (second_byte & 0x80) >> 7
@@ -91,7 +117,11 @@ def decode_asdu_fields(asdu):
     cot = third_byte & 0x3F
     org = asdu[3]
     asdu_address = (asdu[4] << 8) | asdu[5]
-    return type_id, sq, num_objects, t, pn, cot, org, asdu_address
+    info_objects = asdu[6:]
+    
+    element_len, info_elements = decode_info_objects(info_objects, sq, type_id)
+    return type_id, sq, num_objects, t, pn, cot, org, asdu_address, info_elements, element_len
+
 
 
 def get_additional_info(asdu_types_df, cot_values_df, type_id, cot):
@@ -109,7 +139,7 @@ def get_additional_info(asdu_types_df, cot_values_df, type_id, cot):
 
 
 def prepare_result(direccion, start_field, control_field, apdu_format, u_type, type_id, sq, num_objects, t, pn, cot,
-                   org, asdu_address, description, reference, cot_name, cot_abbr):
+                   org, asdu_address, description, reference, cot_name, cot_abbr,info_objects, element_len):
     # Preparar el resultado
     result = {
         "direccion": direccion,
@@ -130,6 +160,8 @@ def prepare_result(direccion, start_field, control_field, apdu_format, u_type, t
             "cot_abbr": cot_abbr,
             "org": org,
             "asdu_address": asdu_address,
+            "element_len" : element_len,
+            "info_objects": info_objects,
         }
     }
     return result
@@ -166,4 +198,4 @@ def analizar_archivo(nombre_archivo):
         print(secuencias_bytes[idx])
         imprimir_resultados(res)
 
-analizar_archivo('traffic_test.txt')
+analizar_archivo(os.path.dirname(__file__)+'/'+'traffic_test_sq_0.txt')

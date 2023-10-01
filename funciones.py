@@ -25,6 +25,11 @@ def imprimir_resultados(resultados):
             print(f"    Abreviación COT: {resultados['asdu']['cot_abbr']}")
             print(f"    ORG: {resultados['asdu']['org']}")
             print(f"    ASDU Address: {resultados['asdu']['asdu_address']}")
+            print(f"    information elements len: {resultados['asdu']['element_len']}")
+            
+            for i,j in enumerate(resultados['asdu']['info_objects']):
+                print(f"Object {i}: {j}")
+        
         elif resultados['apdu_format'] == 'U':
             print(f"  Tipo de mensaje U: {resultados['u_type']}")
 
