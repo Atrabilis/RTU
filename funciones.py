@@ -3,6 +3,25 @@ import sys
 from iec104_control_frames import *
 sys.path.insert(0, os.getcwd())
 
+def send_gnrl_interrogation_apdu(client_socket, increment):
+    # Incrementar el quinto byte en el APDU
+    interrogation_apdu = bytearray(b'\x68\x04\x01\x00\x00\x00')
+    interrogation_apdu[4] = (interrogation_apdu[4] + increment) & 0xFF  # Incrementa el quinto byte
+
+    # Send the Interrogation General APDU
+    client_socket.send(interrogation_apdu)
+    print("T->", interrogation_apdu)
+    
+def send_ctr_interrogation_apdu(client_socket, increment):
+    # Incrementar el quinto byte en el APDU
+    interrogation_apdu = bytearray(b'\x68\x0e\x00\x00\x00\x00\x65\x01\x06\x00\xff\xff\x00\x00\x00\x05')
+    interrogation_apdu[2] = (interrogation_apdu[4] + increment) & 0xFF
+    interrogation_apdu[4] = (interrogation_apdu[4] + increment) & 0xFF  # Incrementa el quinto byte
+
+    # Send the Interrogation General APDU
+    client_socket.send(interrogation_apdu)
+    print("T->", interrogation_apdu)
+
 def bytes_a_decimal(bytes_cadena):
     return ' '.join(str(b) for b in bytes_cadena)
 

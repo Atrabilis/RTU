@@ -163,4 +163,4 @@ def analizar_archivo(nombre_archivo):
         print(secuencias_bytes[idx])
         imprimir_resultados(res)
 
-analizar_archivo('traffic_test_rtu.txt')
+analizar_archivo('traffic_test.txt')
