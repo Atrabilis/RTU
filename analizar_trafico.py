@@ -1,92 +1,117 @@
 import pandas as pd
 from funciones import *
+
+# Constantes para los archivos CSV
 ASDU_TYPES_CSV = 'ASDU_types.csv'
 COT_VALUES_CSV = 'COT_values.csv'
 
+
 def analizar_iec104(mensaje, direccion):
+    # Inicializar todas las variables que se usan más adelante
+    type_id = None
+    sq = None
+    num_objects = None
+    t = None
+    pn = None
+    cot = None
+    org = None
+    asdu_address = None
+    description = None
+    reference = None
+    cot_name = None
+    cot_abbr = None
+    u_type = None
+    
+    # Cargar DataFrames para los tipos de ASDU y los valores de COT
     asdu_types_df = pd.read_csv(ASDU_TYPES_CSV)
     cot_values_df = pd.read_csv(COT_VALUES_CSV)
-    
-    if len(mensaje) < 4:
-        return {"error": "Mensaje demasiado corto", "direccion": direccion}
 
+    # Constantes
+    LONGITUD_DIRECCION = 3
+
+    # Inicialización de variables
     start_field = mensaje[0]
+    control_field = mensaje[2]
+    cf1 = control_field
+    apdu_format = "I" if (cf1 & 0x01) == 0 else "S" if (cf1 & 0x03) == 1 else "U"
+    asdu = mensaje[6:]
 
+    # Verificar el campo de inicio
     if start_field != 0x68:
         return {"error": "Campo de inicio inválido", "direccion": direccion}
 
-    control_field = mensaje[2]
-
-    cf1 = control_field
-    apdu_format = "I" if (cf1 & 0x01) == 0 else "S" if (cf1 & 0x03) == 1 else "U"
-    u_type = None
-    type_id = None
-    org = None
-    asdu_address = None
-    info_objects = None
-
+    # Analizar el formato U
     if apdu_format == "U":
-        if cf1 == 0x43:
-            u_type = "Test Frame Activation"
-        elif cf1 == 0x83:
-            u_type = "Test Frame Confirmation"
-        elif cf1 == 0x13:
-            u_type = "Stop Data Transfer Activation"
-        elif cf1 == 0x23:
-            u_type = "Stop Data Transfer Confirmation"
-        elif cf1 == 0x07:
-            u_type = "Start Data Transfer Activation"
-        elif cf1 == 0x0B:
-            u_type = "Start Data Transfer Confirmation"
+        # Decodificar el tipo de marco U
+        u_type = decode_u_type(cf1)
 
-    asdu = mensaje[6:]
+    # Analizar el formato I
+    elif apdu_format == "I":
+        # Verificar la longitud de ASDU
+        if len(asdu) < 6:
+            raise Exception("ASDU demasiado corto")
 
-    if apdu_format == "I":
-        type_id = asdu[0]
-        longitud_mensaje = calcular_longitud(type_id)
-        
-        if len(asdu) > 1:
-            second_byte = asdu[1]
-            sq = (second_byte & 0x80) >> 7
-            num_objects = second_byte & 0x7F
+        # Decodificar campos de ASDU
+        type_id, sq, num_objects, t, pn, cot, org, asdu_address = decode_asdu_fields(asdu)
 
-        if len(asdu) > 2:
-            third_byte = asdu[2]
-            t = (third_byte & 0x80) >> 7
-            pn = (third_byte & 0x40) >> 6
-            cot = third_byte & 0x3F
-        
-        if len(asdu) > 3:
-            org = asdu[3]  # Originator Address en la posición 3 de asdu
+        # Obtener información adicional de los DataFrames
+        type_info, cot_info, description, reference, cot_name, cot_abbr = get_additional_info(
+            asdu_types_df, cot_values_df, type_id, cot)
 
-        if len(asdu) > 5:
-            asdu_address = (asdu[4] << 8) | asdu[5]  # ASDU Address Fields en las posiciones 4 y 5 de asdu
-        
-        if len(asdu) > 6:
-            info_objects = []
-            start_idx = 6  # Start index for Information Objects
-
-            for _ in range(num_objects):
-                object_data = asdu[start_idx:start_idx + longitud_mensaje]
-                info_objects.append(object_data)
-                start_idx += longitud_mensaje        
-
-        type_info = asdu_types_df[asdu_types_df['Type'] == type_id]
-        cot_info = cot_values_df[cot_values_df['Code']==cot]
-        if not type_info.empty:
-            description = type_info['Description'].values[0]
-            reference = type_info['Reference'].values[0]
-        else:
-            description = reference = "Unknown"
-        if not cot_info.empty:
-            cot_name = cot_info['Cause of Transmission'].values[0]
-            cot_abbr = cot_info['Abbreviation'].values[0]
-    else:
-        longitud_mensaje = description = reference = sq = num_objects = t = pn = cot = None
-        cot_name = cot_abbr = None
+    # Preparar el resultado
     
+    result = prepare_result(direccion, start_field, control_field, apdu_format, u_type, type_id, sq, num_objects,
+                            t, pn, cot, org, asdu_address, description, reference, cot_name, cot_abbr)
 
-    return {
+    return result
+
+
+def decode_u_type(cf1):
+    # Decodificar el tipo de marco U
+    u_type_dict = {
+        0x43: "Test Frame Activation",
+        0x83: "Test Frame Confirmation",
+        0x13: "Stop Data Transfer Activation",
+        0x23: "Stop Data Transfer Confirmation",
+        0x07: "Start Data Transfer Activation",
+        0x0B: "Start Data Transfer Confirmation"
+    }
+    return u_type_dict.get(cf1)
+
+
+def decode_asdu_fields(asdu):
+    # Decodificar campos de ASDU
+    type_id = asdu[0]
+    second_byte = asdu[1]
+    sq = (second_byte & 0x80) >> 7
+    num_objects = second_byte & 0x7F
+    third_byte = asdu[2]
+    t = (third_byte & 0x80) >> 7
+    pn = (third_byte & 0x40) >> 6
+    cot = third_byte & 0x3F
+    org = asdu[3]
+    asdu_address = (asdu[4] << 8) | asdu[5]
+    return type_id, sq, num_objects, t, pn, cot, org, asdu_address
+
+
+def get_additional_info(asdu_types_df, cot_values_df, type_id, cot):
+    # Obtener información adicional de los DataFrames
+    type_info = asdu_types_df[asdu_types_df['Type'] == type_id]
+    cot_info = cot_values_df[cot_values_df['Code'] == cot]
+    description = reference = cot_name = cot_abbr = None
+    if not type_info.empty:
+        description = type_info['Description'].values[0]
+        reference = type_info['Reference'].values[0]
+    if not cot_info.empty:
+        cot_name = cot_info['Cause of Transmission'].values[0]
+        cot_abbr = cot_info['Abbreviation'].values[0]
+    return type_info, cot_info, description, reference, cot_name, cot_abbr
+
+
+def prepare_result(direccion, start_field, control_field, apdu_format, u_type, type_id, sq, num_objects, t, pn, cot,
+                   org, asdu_address, description, reference, cot_name, cot_abbr):
+    # Preparar el resultado
+    result = {
         "direccion": direccion,
         "start_field": start_field,
         "control_field": control_field,
@@ -101,49 +126,14 @@ def analizar_iec104(mensaje, direccion):
             "t": t,
             "pn": pn,
             "cot": cot,
-            "cot_name":cot_name,
-            "cot_abbr":cot_abbr,
+            "cot_name": cot_name,
+            "cot_abbr": cot_abbr,
             "org": org,
             "asdu_address": asdu_address,
-            "longitud_mensaje": longitud_mensaje,  # añadir la longitud del mensaje aquí
-            "info_objects": info_objects,  # se actualizó para evitar sobrescribir los bytes org y asdu_address
-            }
-        
+        }
     }
+    return result
     
-    
-def imprimir_resultados(resultados):
-    print(f"Dirección: {resultados['direccion']}")
-    if "error" in resultados:
-        print(f"Análisis: {resultados['error']}")
-    else:
-        print(f"Análisis:")
-        print(f"  Formato APDU: {resultados['apdu_format']}")
-        print(f"  Control Field: {resultados['control_field']}")
-        if resultados['apdu_format'] == 'I':
-            print(f"  ASDU:")
-            print(f"    Type ID: {resultados['asdu']['type_id']}")
-            print(f"    Descripción ID: {resultados['asdu']['description']}")
-            print(f"    Referencia ID: {resultados['asdu']['reference']}")
-            print(f"    SQ: {resultados['asdu']['sq']}")
-            print(f"    Number of Objects: {resultados['asdu']['num_objects']}")
-            print(f"    T: {resultados['asdu']['t']}")
-            print(f"    PN: {resultados['asdu']['pn']}")
-            print(f"    COT: {resultados['asdu']['cot']}")
-            print(f"    Nombre COT: {resultados['asdu']['cot_name']}")
-            print(f"    Abreviación COT: {resultados['asdu']['cot_abbr']}")
-            print(f"    ORG: {resultados['asdu']['org']}")
-            print(f"    ASDU Address: {resultados['asdu']['asdu_address']}")
-            print(f"    information objects length: {resultados['asdu']['longitud_mensaje']}") 
-            print(f"    Objetos de Información: {resultados['asdu']['info_objects']}")
-            for i, info_object in enumerate(resultados['asdu']['info_objects']):
-                print(f"      Object {i + 1}: {info_object}")
-        elif resultados['apdu_format'] == 'U':
-            print(f"  Tipo de mensaje U: {resultados['u_type']}")
-
-    print("--------------------------------------------------")
-
-
 def analizar_archivo(nombre_archivo):
     try:
         with open(nombre_archivo, 'r') as archivo:

@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"org.openmuc.j60870.app","l":"SampleServer.ServerListener.ConnectionListener"},{"p":"org.openmuc.j60870.app","l":"ConsoleClient"},{"p":"org.openmuc.j60870.app","l":"SampleServer"},{"p":"org.openmuc.j60870.app","l":"SampleServer.ServerListener"}]

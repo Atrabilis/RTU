@@ -3,8 +3,71 @@ import sys
 from iec104_control_frames import *
 sys.path.insert(0, os.getcwd())
 
-def calcular_longitud(type_id):
-    ELEMENT_LENGTHS = {
+def imprimir_resultados(resultados):
+    print(f"Dirección: {resultados['direccion']}")
+    if "error" in resultados:
+        print(f"Análisis: {resultados['error']}")
+    else:
+        print(f"Análisis:")
+        print(f"  Formato APDU: {resultados['apdu_format']}")
+        print(f"  Control Field: {resultados['control_field']}")
+        if resultados['apdu_format'] == 'I':
+            print(f"  ASDU:")
+            print(f"    Type ID: {resultados['asdu']['type_id']}")
+            print(f"    Descripción ID: {resultados['asdu']['description']}")
+            print(f"    Referencia ID: {resultados['asdu']['reference']}")
+            print(f"    SQ: {resultados['asdu']['sq']}")
+            print(f"    Number of Objects: {resultados['asdu']['num_objects']}")
+            print(f"    T: {resultados['asdu']['t']}")
+            print(f"    PN: {resultados['asdu']['pn']}")
+            print(f"    COT: {resultados['asdu']['cot']}")
+            print(f"    Nombre COT: {resultados['asdu']['cot_name']}")
+            print(f"    Abreviación COT: {resultados['asdu']['cot_abbr']}")
+            print(f"    ORG: {resultados['asdu']['org']}")
+            print(f"    ASDU Address: {resultados['asdu']['asdu_address']}")
+        elif resultados['apdu_format'] == 'U':
+            print(f"  Tipo de mensaje U: {resultados['u_type']}")
+
+    print("--------------------------------------------------")
+
+
+
+def interpretar_objetos_informacion(data, sq, num_objects, apdu_length):
+    index = 0  # índice para rastrear la posición actual en los datos
+    objetos = []
+
+    LONGITUD_DIRECCION = 3  # Longitud del campo de dirección del objeto de información
+
+    if sq == 0:
+        # Para sq = 0, calculamos la longitud del objeto de información usando la fórmula dada
+        longitud_objeto = (apdu_length - 10) // num_objects - LONGITUD_DIRECCION
+        while index < len(data):
+            direccion_objeto = data[index:index+LONGITUD_DIRECCION]
+            index += LONGITUD_DIRECCION
+            elementos_informacion = data[index:index+longitud_objeto]
+            index += longitud_objeto
+            objetos.append({
+                "direccion": direccion_objeto,
+                "elementos": elementos_informacion
+            })
+    elif sq == 1:
+        # Para sq = 1, calculamos la longitud del objeto de información usando la fórmula dada
+        longitud_objeto = apdu_length - 13  # Calculado según la fórmula proporcionada
+        longitud_elemento = longitud_objeto // num_objects  # Longitud de cada elemento de información
+        direccion_objeto_base = int.from_bytes(data[index:index+LONGITUD_DIRECCION], byteorder='little')
+        index += LONGITUD_DIRECCION
+        for i in range(num_objects):
+            elementos_informacion = data[index:index+longitud_elemento]
+            index += longitud_elemento
+            direccion_objeto = (direccion_objeto_base + i).to_bytes(LONGITUD_DIRECCION, byteorder='little')
+            objetos.append({
+                "direccion": direccion_objeto,
+                "elementos": elementos_informacion
+            })
+
+    return objetos
+
+ELEMENT_LENGTHS = {
     "SIQ": 1,
     "DIQ": 1,
     "BSI": 4,
@@ -46,7 +109,8 @@ def calcular_longitud(type_id):
     "COI": 2,
     "FBP": 2
 }
-    ASDU_FORMATS = {
+
+ASDU_FORMATS = {
     1: ["SIQ"],
     2: ["SIQ", "CP24Time2a"],
     3: ["DIQ"],
@@ -115,16 +179,6 @@ def calcular_longitud(type_id):
     126: ["NOF", "LOF", "SOF", "CP56Time2a"],
     127: []
 }
-    if type_id is None:
-        raise ValueError(f"No se encontró el formato")
-
-    # Calcular la longitud total sumando las longitudes de cada elemento
-    longitud_total = 0
-    for elemento in ASDU_FORMATS[type_id]:
-        print(ASDU_FORMATS[type_id],type_id)
-        longitud_total += ELEMENT_LENGTHS[elemento]
-
-    return longitud_total
 
 def send_gnrl_interrogation_apdu(client_socket, increment):
     # Incrementar el quinto byte en el APDU
