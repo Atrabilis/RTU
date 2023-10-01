@@ -1,12 +1,12 @@
 import pandas as pd
-
+from funciones import *
 ASDU_TYPES_CSV = 'ASDU_types.csv'
 COT_VALUES_CSV = 'COT_values.csv'
 
 def analizar_iec104(mensaje, direccion):
     asdu_types_df = pd.read_csv(ASDU_TYPES_CSV)
     cot_values_df = pd.read_csv(COT_VALUES_CSV)
-
+    
     if len(mensaje) < 4:
         return {"error": "Mensaje demasiado corto", "direccion": direccion}
 
@@ -43,6 +43,8 @@ def analizar_iec104(mensaje, direccion):
 
     if apdu_format == "I":
         type_id = asdu[0]
+        longitud_mensaje = calcular_longitud(type_id)
+        
         if len(asdu) > 1:
             second_byte = asdu[1]
             sq = (second_byte & 0x80) >> 7
@@ -61,9 +63,13 @@ def analizar_iec104(mensaje, direccion):
             asdu_address = (asdu[4] << 8) | asdu[5]  # ASDU Address Fields en las posiciones 4 y 5 de asdu
         
         if len(asdu) > 6:
-            info_objects = asdu[6:]  # Los bytes restantes son Information Objects
-        else:
-            info_objects = []            
+            info_objects = []
+            start_idx = 6  # Start index for Information Objects
+
+            for _ in range(num_objects):
+                object_data = asdu[start_idx:start_idx + longitud_mensaje]
+                info_objects.append(object_data)
+                start_idx += longitud_mensaje        
 
         type_info = asdu_types_df[asdu_types_df['Type'] == type_id]
         cot_info = cot_values_df[cot_values_df['Code']==cot]
@@ -76,8 +82,9 @@ def analizar_iec104(mensaje, direccion):
             cot_name = cot_info['Cause of Transmission'].values[0]
             cot_abbr = cot_info['Abbreviation'].values[0]
     else:
-        description = reference = sq = num_objects = t = pn = cot = None
+        longitud_mensaje = description = reference = sq = num_objects = t = pn = cot = None
         cot_name = cot_abbr = None
+    
 
     return {
         "direccion": direccion,
@@ -98,10 +105,13 @@ def analizar_iec104(mensaje, direccion):
             "cot_abbr":cot_abbr,
             "org": org,
             "asdu_address": asdu_address,
+            "longitud_mensaje": longitud_mensaje,  # añadir la longitud del mensaje aquí
             "info_objects": info_objects,  # se actualizó para evitar sobrescribir los bytes org y asdu_address
-        }
+            }
+        
     }
-
+    
+    
 def imprimir_resultados(resultados):
     print(f"Dirección: {resultados['direccion']}")
     if "error" in resultados:
@@ -124,7 +134,10 @@ def imprimir_resultados(resultados):
             print(f"    Abreviación COT: {resultados['asdu']['cot_abbr']}")
             print(f"    ORG: {resultados['asdu']['org']}")
             print(f"    ASDU Address: {resultados['asdu']['asdu_address']}")
+            print(f"    information objects length: {resultados['asdu']['longitud_mensaje']}") 
             print(f"    Objetos de Información: {resultados['asdu']['info_objects']}")
+            for i, info_object in enumerate(resultados['asdu']['info_objects']):
+                print(f"      Object {i + 1}: {info_object}")
         elif resultados['apdu_format'] == 'U':
             print(f"  Tipo de mensaje U: {resultados['u_type']}")
 
