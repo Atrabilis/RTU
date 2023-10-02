@@ -166,6 +166,7 @@ def prepare_result(ELEMENT_LENGTHS, asdu_types_df, direccion, start_field, contr
             diccionario_auxiliar = {}
             index = 0
             for element in elements:
+                element = element.replace(" ", "")
                 diccionario_auxiliar[element] = objeto[1][index:index+ELEMENT_LENGTHS[element]]
                 if element == 'IEEE STD 754':
                     diccionario_auxiliar[element] = struct.unpack('f', diccionario_auxiliar[element])[0]
@@ -211,4 +212,4 @@ def analizar_archivo(nombre_archivo):
         print("Sequence: "+secuencias_bytes[idx])
         imprimir_resultados(res)
 
-analizar_archivo(os.path.dirname(__file__)+'/'+'traffic_test_sq_0.txt')
+analizar_archivo(os.path.dirname(__file__)+'/'+'traffic_test_sq_1.txt')
