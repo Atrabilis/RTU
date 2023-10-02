@@ -168,7 +168,7 @@ def prepare_result(ELEMENT_LENGTHS, asdu_types_df, direccion, start_field, contr
             for element in elements:
                 element = element.replace(" ", "")
                 diccionario_auxiliar[element] = objeto[1][index:index+ELEMENT_LENGTHS[element]]
-                if element == 'IEEE STD 754':
+                if element == 'IEEESTD754':
                     diccionario_auxiliar[element] = struct.unpack('f', diccionario_auxiliar[element])[0]
                     
                 index += ELEMENT_LENGTHS[element]
