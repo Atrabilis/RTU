@@ -50,7 +50,6 @@ def imprimir_resultados(resultados):
             
             for i,j in enumerate(resultados['asdu']['info_objects']):
                 print(f"Object {i}: {j}")
-                print(f"    Elements: {resultados['asdu']['Elements']}")
         
         elif resultados['apdu_format'] == 'U':
             print(f"  Tipo de mensaje U: {resultados['u_type']}")

@@ -1,7 +1,7 @@
 import pandas as pd
 from funciones import *
 import os
-import struct
+import struct 
 
 # Constantes para los archivos CSV
 ASDU_TYPES_CSV = 'ASDU_types.csv'
@@ -160,10 +160,23 @@ def prepare_result(ELEMENT_LENGTHS, asdu_types_df, direccion, start_field, contr
         }
     }
     format_list = {}
-    #Implementar decodificacion ieee
-    result["asdu"]["Elements"] = format_list
-    print(format_list)
+    for elements in result["asdu"]["information_object_format"]:
+        elements = elements.split("+")
+        for idx,objeto in enumerate(info_objects):
+            diccionario_auxiliar = {}
+            index = 0
+            for element in elements:
+                diccionario_auxiliar[element] = objeto[1][index:index+ELEMENT_LENGTHS[element]]
+                if element == 'IEEE STD 754':
+                    diccionario_auxiliar[element] = struct.unpack('f', diccionario_auxiliar[element])[0]
+                    
+                index += ELEMENT_LENGTHS[element]
+            
+            result["asdu"]["info_objects"][idx] = [result["asdu"]["info_objects"][idx][0],diccionario_auxiliar]
+            
+
     
+    result["asdu"]["Elements"] = format_list
     return result
     
 def analizar_archivo(nombre_archivo):
