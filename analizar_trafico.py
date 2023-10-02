@@ -84,8 +84,10 @@ def decode_info_objects(info_objects, sq, type_id):
     if sq == 1:
         info_object_address = (info_objects[0] << 16) | (info_objects[1] << 8) | info_objects[2]
         info_elements = info_objects[3:]
-        index += 3
-        while index+1 < len(info_elements):
+        #print("info elements", info_elements, "len:", len(info_elements), "element len:", element_length, "type id:", type_id)
+        index =0
+        while index < len(info_elements):
+            print("index:", index)
             info_element = info_elements[index:index+element_length]
             info_objects_list.append([info_object_address,info_element])
             index += element_length
