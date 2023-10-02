@@ -4,8 +4,8 @@ import os
 import struct 
 
 # Constantes para los archivos CSV
-ASDU_TYPES_CSV = 'ASDU_types.csv'
-COT_VALUES_CSV = 'COT_values.csv'
+ASDU_TYPES_CSV = os.path.dirname(__file__)+'/'+'ASDU_types.csv'
+COT_VALUES_CSV = os.path.dirname(__file__)+'/'+'COT_values.csv'
 
 def analizar_iec104(mensaje, direccion):
     # Inicializar todas las variables que se usan más adelante
@@ -84,7 +84,6 @@ def decode_info_objects(info_objects, sq, type_id):
     if sq == 1:
         info_object_address = (info_objects[0] << 16) | (info_objects[1] << 8) | info_objects[2]
         info_elements = info_objects[3:]
-        index += 3
         while index+1 < len(info_elements):
             info_element = info_elements[index:index+element_length]
             info_objects_list.append([info_object_address,info_element])
@@ -170,7 +169,8 @@ def prepare_result(ELEMENT_LENGTHS, asdu_types_df, direccion, start_field, contr
                 diccionario_auxiliar[element] = objeto[1][index:index+ELEMENT_LENGTHS[element]]
                 if element == 'IEEESTD754':
                     diccionario_auxiliar[element] = struct.unpack('f', diccionario_auxiliar[element])[0]
-                    
+                elif element == 'SVA':
+                    diccionario_auxiliar[element] = int.from_bytes(diccionario_auxiliar[element],byteorder='little', signed=True)   
                 index += ELEMENT_LENGTHS[element]
             
             result["asdu"]["info_objects"][idx] = [result["asdu"]["info_objects"][idx][0],diccionario_auxiliar]
