@@ -1,6 +1,7 @@
 import pandas as pd
 from funciones import *
 import os
+import struct
 
 # Constantes para los archivos CSV
 ASDU_TYPES_CSV = 'ASDU_types.csv'
@@ -59,11 +60,10 @@ def analizar_iec104(mensaje, direccion):
 
     # Preparar el resultado
     
-    result = prepare_result(direccion, start_field, control_field, apdu_format, u_type, type_id, sq, num_objects,
+    result = prepare_result(ELEMENT_LENGTHS,asdu_types_df,direccion, start_field, control_field, apdu_format, u_type, type_id, sq, num_objects,
                             t, pn, cot, org, asdu_address, description, reference, cot_name, cot_abbr, info_objects, element_len)
 
     return result
-
 
 def decode_u_type(cf1):
     # Decodificar el tipo de marco U
@@ -76,7 +76,6 @@ def decode_u_type(cf1):
         0x0B: "Start Data Transfer Confirmation"
     }
     return u_type_dict.get(cf1)
-
 
 def decode_info_objects(info_objects, sq, type_id):
     element_length = sum(ELEMENT_LENGTHS[element] for element in ASDU_FORMATS[type_id])
@@ -102,9 +101,7 @@ def decode_info_objects(info_objects, sq, type_id):
 
             info_objects_list.append((info_object_address, info_elements))
     
-
     return element_length, info_objects_list
-
 
 def decode_asdu_fields(asdu):
     type_id = asdu[0]
@@ -122,8 +119,6 @@ def decode_asdu_fields(asdu):
     element_len, info_elements = decode_info_objects(info_objects, sq, type_id)
     return type_id, sq, num_objects, t, pn, cot, org, asdu_address, info_elements, element_len
 
-
-
 def get_additional_info(asdu_types_df, cot_values_df, type_id, cot):
     # Obtener información adicional de los DataFrames
     type_info = asdu_types_df[asdu_types_df['Type'] == type_id]
@@ -137,8 +132,7 @@ def get_additional_info(asdu_types_df, cot_values_df, type_id, cot):
         cot_abbr = cot_info['Abbreviation'].values[0]
     return type_info, cot_info, description, reference, cot_name, cot_abbr
 
-
-def prepare_result(direccion, start_field, control_field, apdu_format, u_type, type_id, sq, num_objects, t, pn, cot,
+def prepare_result(ELEMENT_LENGTHS, asdu_types_df, direccion, start_field, control_field, apdu_format, u_type, type_id, sq, num_objects, t, pn, cot,
                    org, asdu_address, description, reference, cot_name, cot_abbr,info_objects, element_len):
     # Preparar el resultado
     result = {
@@ -160,10 +154,16 @@ def prepare_result(direccion, start_field, control_field, apdu_format, u_type, t
             "cot_abbr": cot_abbr,
             "org": org,
             "asdu_address": asdu_address,
+            "information_object_format":asdu_types_df.loc[asdu_types_df["Type"] == type_id, "Format"].values,
             "element_len" : element_len,
             "info_objects": info_objects,
         }
     }
+    format_list = {}
+    #Implementar decodificacion ieee
+    result["asdu"]["Elements"] = format_list
+    print(format_list)
+    
     return result
     
 def analizar_archivo(nombre_archivo):
@@ -195,7 +195,7 @@ def analizar_archivo(nombre_archivo):
         resultados.append(resultado)
 
     for idx,res in enumerate(resultados):
-        print(secuencias_bytes[idx])
+        print("Sequence: "+secuencias_bytes[idx])
         imprimir_resultados(res)
 
 analizar_archivo(os.path.dirname(__file__)+'/'+'traffic_test_sq_0.txt')

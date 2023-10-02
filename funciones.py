@@ -3,6 +3,26 @@ import sys
 from iec104_control_frames import *
 sys.path.insert(0, os.getcwd())
 
+def hex_a_bin(hex_num: str) -> str:
+    bin_num = bin(int(hex_num, 16))[2:].zfill(32)
+    return bin_num
+
+def ieee754_a_decimal(bits: str) -> float:
+    if len(bits) != 32:
+        raise ValueError("La longitud de la cadena de bits debe ser 32")
+    
+    s = int(bits[0])
+    e = int(bits[1:9], 2)
+    f = bits[9:]
+
+    signo = (-1) ** s
+    exponente = e - 127
+    mantisa = 1 + sum(int(bit) / (2 ** index) for index, bit in enumerate(f, start=1))
+
+    decimal = signo * mantisa * (2 ** exponente)
+
+    return decimal
+
 def imprimir_resultados(resultados):
     print(f"Dirección: {resultados['direccion']}")
     if "error" in resultados:
@@ -26,9 +46,11 @@ def imprimir_resultados(resultados):
             print(f"    ORG: {resultados['asdu']['org']}")
             print(f"    ASDU Address: {resultados['asdu']['asdu_address']}")
             print(f"    information elements len: {resultados['asdu']['element_len']}")
+            print(f"    information elements format: {resultados['asdu']['information_object_format']}")
             
             for i,j in enumerate(resultados['asdu']['info_objects']):
                 print(f"Object {i}: {j}")
+                print(f"    Elements: {resultados['asdu']['Elements']}")
         
         elif resultados['apdu_format'] == 'U':
             print(f"  Tipo de mensaje U: {resultados['u_type']}")
