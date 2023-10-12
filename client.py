@@ -6,10 +6,33 @@ import time
 from funciones import *
 from analizar_trafico import *
 from iec104_control_frames import *
+from pymongo import MongoClient
+import queue
+
+data_queue = queue.Queue()
+
+mongoclient = MongoClient('localhost', 27017)
+db = mongoclient.datosRTU
+collection= db.datos
+should_continue = True
+ns=0
+nr=0 
+SERVER_IP = 'localhost'
+SERVER_PORT = 2404
+INTERROGATION_INTERVAL = 1
 
 # Configurar el logging
 logging.basicConfig(filename='communication_log.txt', level=logging.INFO, 
                     format='%(asctime)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+
+def is_mongo_alive():
+    try:
+        # Intenta obtener un documento de la colección (limitado a 1 para no cargar demasiados datos).
+        collection.find_one()
+        return True
+    except Exception as e:
+        print(f"Error al conectar con MongoDB: {str(e)}")
+        return False
 
 def bytes_to_hex_string(b):
     return ' '.join(f'{byte:02x}' for byte in b)
@@ -69,7 +92,22 @@ def listening_thread(client_socket):
             received_data_fields = analizar_iec104(received_data,"<-")
             if received_data_fields["apdu_format"] == 'I' and len(received_data) != 6:
                 nr +=1
+            #print(received_data_fields)
+            data_queue.put(received_data_fields)
+
+def database_insertion_thread():
+    while should_continue:
+        try:
+            # Tomar datos de la cola y realizar la inserción en MongoDB
+            data_to_insert = data_queue.get(timeout=1)  # Timeout para evitar bloqueo y poder cerrar el hilo adecuadamente
             
+            # Convertir numpy.ndarray a lista
+            data_to_insert['asdu']['information_object_format'] = data_to_insert['asdu']['information_object_format'].tolist()
+            
+            # Insertar datos en MongoDB
+            collection.insert_one(data_to_insert)
+        except queue.Empty:
+            pass  # No hacer nada si la cola está vacía, simplemente continuar y volver a intentarlo
             
 def sending_thread(client_socket):
     global nr
@@ -84,20 +122,10 @@ def sending_thread(client_socket):
         print('nr:', nr, 'ns',ns,end= '\n\n')
         time.sleep(INTERROGATION_INTERVAL)
 
-should_continue = True
-ns=0
-nr=0 
-SERVER_IP = 'localhost'
-SERVER_PORT = 2404
-INTERROGATION_INTERVAL = 0.1
 
 def main():
     global should_continue
     start_time = time.time()
-    t0=0
-    t1=0
-    t2=0
-    t3=0
     
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
         try:
@@ -108,10 +136,12 @@ def main():
 
             # Crear e iniciar los hilos
             listener = threading.Thread(target=listening_thread, args=(client_socket,))
-            sender = threading.Thread(target=sending_thread, args=(client_socket,))  
+            sender = threading.Thread(target=sending_thread, args=(client_socket,))
+            db_inserter = threading.Thread(target=database_insertion_thread)  # Hilo para inserciones en MongoDB
 
             listener.start()
             sender.start()
+            db_inserter.start()
 
             # Mantener el programa corriendo y esperar una interrupción del teclado (CTRL+C)
             while should_continue:
@@ -120,12 +150,15 @@ def main():
             # Si sale del bucle, esperar a que los hilos terminen
             listener.join()
             sender.join()
+            db_inserter.join()
 
         except KeyboardInterrupt:
             print("Received keyboard interrupt. Stopping threads...")
-            should_continue = False
+            should_continue = False  # Primero, asegurarte de que los threads sepan que deben parar
+            db_inserter.join()
             listener.join()
             sender.join()
+
         except Exception as e:
             logging.error(f"An error occurred: {str(e)}")
             print(f"An error occurred: {str(e)}")
@@ -134,6 +167,7 @@ def main():
             connection_duration = end_time-start_time
             logging.info(f"Connection duration: {connection_duration:.2f} seconds")
             print(f"Connection duration: {connection_duration:.2f} seconds")
-
+            
+            
 if __name__ == "__main__":
     main()
