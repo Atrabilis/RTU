@@ -212,4 +212,5 @@ def analizar_archivo(nombre_archivo):
         print("Sequence: "+secuencias_bytes[idx])
         imprimir_resultados(res)
 
-analizar_archivo(os.path.dirname(__file__)+'/'+'traffic_test_sq_1.txt')
+if __name__ == "__main__":
+    analizar_archivo("traffic_test_java_server.txt")
