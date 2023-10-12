@@ -7,7 +7,6 @@ from funciones import *
 from analizar_trafico import *
 from iec104_control_frames import *
 
-
 # Configurar el logging
 logging.basicConfig(filename='communication_log.txt', level=logging.INFO, 
                     format='%(asctime)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
@@ -93,15 +92,13 @@ SERVER_PORT = 2404
 INTERROGATION_INTERVAL = 0.1
 
 def main():
+    global should_continue
     start_time = time.time()
     t0=0
     t1=0
     t2=0
     t3=0
     
-
-    start_time = time.time()
-
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
         try:
             client_socket.connect((SERVER_IP, SERVER_PORT))
@@ -116,10 +113,19 @@ def main():
             listener.start()
             sender.start()
 
-            # Esperar a que los hilos terminen
+            # Mantener el programa corriendo y esperar una interrupción del teclado (CTRL+C)
+            while should_continue:
+                time.sleep(1)  # Esperar y no hacer nada, reduciendo la carga de la CPU
+            
+            # Si sale del bucle, esperar a que los hilos terminen
             listener.join()
             sender.join()
 
+        except KeyboardInterrupt:
+            print("Received keyboard interrupt. Stopping threads...")
+            should_continue = False
+            listener.join()
+            sender.join()
         except Exception as e:
             logging.error(f"An error occurred: {str(e)}")
             print(f"An error occurred: {str(e)}")
