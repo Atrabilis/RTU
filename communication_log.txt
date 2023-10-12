@@ -1,450 +1,777 @@
-2023-10-12 00:33:19 - -> b'h\x04\x07\x00\x00\x00'
-2023-10-12 00:33:19 - -> bytearray(b'h\x0e\x00\x00\x00\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:33:19 - -> bytearray(b'h\x04\x00\x00\x00\x00d\x01\x06\x00\x01\x00')
-2023-10-12 00:33:19 - Received: b'h\x0e\x00\x00\x00\x00F\x01\x04\x00\x01\x00\x00\x00\x00\x00'
-2023-10-12 00:33:19 - Received: b'h\x0e\x02\x00\x02\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:33:20 - -> bytearray(b'h\x0e\x00\x00\x00\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:33:55 - -> b'h\x04\x13\x00\x00\x00'
-2023-10-12 00:33:56 - -> b'h\x04\x07\x00\x00\x00'
-2023-10-12 00:33:56 - -> bytearray(b'h\x0e\x00\x00\x00\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:33:56 - Received: b'h\x0e\x00\x00\x00\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:33:56 - Received: b'h\x0e\x02\x00\x02\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:33:56 - Received: b'h\x0e\x04\x00\x02\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:33:56 - Received: b'h\x0e\x06\x00\x02\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:33:57 - -> bytearray(b'h\x0e\x00\x00\x00\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:33:58 - -> bytearray(b'h\x0e\x00\x00\x00\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:33:59 - -> bytearray(b'h\x0e\x00\x00\x00\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:35:03 - -> b'h\x04\x13\x00\x00\x00'
-2023-10-12 00:35:40 - -> b'h\x04\x07\x00\x00\x00'
-2023-10-12 00:35:40 - -> bytearray(b'h\x0e\x00\x00\x00\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:35:40 - Received: b'h\x0e\x00\x00\x00\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:35:40 - Received: b'h\x0e\x02\x00\x02\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:35:40 - Received: b'h\x0e\x04\x00\x02\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:35:40 - Received: b'h\x0e\x06\x00\x02\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:35:40 - Received: b'h\x0e\x08\x00\x02\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:35:40 - Received: b'h\x0e\n\x00\x02\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:35:41 - -> bytearray(b'h\x0e\x00\x00\x00\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:35:42 - -> bytearray(b'h\x0e\x00\x00\x00\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:35:43 - -> bytearray(b'h\x0e\x00\x00\x00\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:36:55 - -> b'h\x04\x07\x00\x00\x00'
-2023-10-12 00:36:55 - -> bytearray(b'h\x0e\x00\x00\x00\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:36:55 - Received: b'h\x0e\x00\x00\x00\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:36:55 - Received: b'h\x0e\x02\x00\x02\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:36:56 - Received: b'h\x0e\x04\x00\x02\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:36:56 - Received: b'h\x0e\x06\x00\x02\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:36:56 - Received: b'h\x0e\x08\x00\x02\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:36:56 - Received: b'h\x0e\n\x00\x02\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:36:56 - Received: b'h\x0e\x0c\x00\x02\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:36:56 - Received: b'h\x0e\x0e\x00\x02\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:36:56 - -> bytearray(b'h\x0e\x02\x00\x02\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:36:56 - Received: b'h\x0e\x10\x00\x04\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:36:57 - Received: b'h\x0e\x12\x00\x04\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:36:57 - -> bytearray(b'h\x0e\x04\x00\x04\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:36:57 - Received: b'h\x0e\x14\x00\x06\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:36:58 - Received: b'h\x0e\x16\x00\x06\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:36:58 - -> bytearray(b'h\x0e\x06\x00\x06\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:36:58 - Received: b'h\x0e\x18\x00\x08\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:36:59 - Received: b'h\x0e\x1a\x00\x08\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:36:59 - -> bytearray(b'h\x0e\x08\x00\x08\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:00 - Received: b'h\x0e\x1c\x00\n\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:00 - Received: b'h\x0e\x1e\x00\n\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:00 - -> bytearray(b'h\x0e\n\x00\n\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:00 - Received: b'h\x0e \x00\x0c\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:01 - Received: b'h\x0e"\x00\x0c\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:01 - -> bytearray(b'h\x0e\x0c\x00\x0c\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:01 - Received: b'h\x0e$\x00\x0e\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:02 - Received: b'h\x0e&\x00\x0e\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:02 - -> bytearray(b'h\x0e\x0e\x00\x0e\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:02 - Received: b'h\x04\x01\x00\x10\x00'
-2023-10-12 00:37:02 - Received: b'h\x0e(\x00\x10\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:03 - Received: b'h\x0e*\x00\x10\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:03 - -> bytearray(b'h\x0e\x10\x00\x10\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:03 - Received: b'h\x0e,\x00\x12\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:04 - Received: b'h\x0e.\x00\x12\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:04 - -> bytearray(b'h\x0e\x12\x00\x12\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:05 - Received: b'h\x0e0\x00\x14\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:05 - Received: b'h\x0e2\x00\x14\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:05 - -> bytearray(b'h\x0e\x14\x00\x14\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:06 - Received: b'h\x0e4\x00\x16\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:06 - Received: b'h\x0e6\x00\x16\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:06 - -> bytearray(b'h\x0e\x16\x00\x16\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:06 - Received: b'h\x0e8\x00\x18\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:07 - Received: b'h\x0e:\x00\x18\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:07 - -> bytearray(b'h\x0e\x18\x00\x18\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:07 - Received: b'h\x0e<\x00\x1a\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:08 - Received: b'h\x0e>\x00\x1a\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:08 - -> bytearray(b'h\x0e\x1a\x00\x1a\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:08 - Received: b'h\x0e@\x00\x1c\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:09 - Received: b'h\x0eB\x00\x1c\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:09 - -> bytearray(b'h\x0e\x1c\x00\x1c\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:09 - Received: b'h\x0eD\x00\x1e\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:10 - Received: b'h\x0eF\x00\x1e\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:10 - -> bytearray(b'h\x0e\x1e\x00\x1e\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:10 - Received: b'h\x04\x01\x00 \x00'
-2023-10-12 00:37:11 - Received: b'h\x0eH\x00 \x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:11 - Received: b'h\x0eJ\x00 \x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:11 - -> bytearray(b'h\x0e \x00 \x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:12 - Received: b'h\x0eL\x00"\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:12 - Received: b'h\x0eN\x00"\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:12 - -> bytearray(b'h\x0e"\x00"\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:13 - Received: b'h\x0eP\x00$\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:13 - Received: b'h\x0eR\x00$\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:13 - -> bytearray(b'h\x0e$\x00$\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:13 - Received: b'h\x0eT\x00&\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:14 - Received: b'h\x0eV\x00&\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:14 - -> bytearray(b'h\x0e&\x00&\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:14 - Received: b'h\x0eX\x00(\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:15 - Received: b'h\x0eZ\x00(\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:15 - -> bytearray(b'h\x0e(\x00(\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:15 - Received: b'h\x0e\\\x00*\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:16 - Received: b'h\x0e^\x00*\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:16 - -> bytearray(b'h\x0e*\x00*\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:17 - Received: b'h\x0e`\x00,\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:17 - Received: b'h\x0eb\x00,\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:17 - -> bytearray(b'h\x0e,\x00,\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:18 - Received: b'h\x0ed\x00.\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:18 - Received: b'h\x0ef\x00.\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:18 - -> bytearray(b'h\x0e.\x00.\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:18 - Received: b'h\x04\x01\x000\x00'
-2023-10-12 00:37:19 - Received: b'h\x0eh\x000\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:19 - Received: b'h\x0ej\x000\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:19 - -> bytearray(b'h\x0e0\x000\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:19 - Received: b'h\x0el\x002\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:20 - Received: b'h\x0en\x002\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:20 - -> bytearray(b'h\x0e2\x002\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:20 - Received: b'h\x0ep\x004\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:21 - Received: b'h\x0er\x004\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:21 - -> bytearray(b'h\x0e4\x004\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:21 - Received: b'h\x0et\x006\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:22 - Received: b'h\x0ev\x006\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:22 - -> bytearray(b'h\x0e6\x006\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:23 - Received: b'h\x0ex\x008\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:23 - Received: b'h\x0ez\x008\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:23 - -> bytearray(b'h\x0e8\x008\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:24 - Received: b'h\x0e|\x00:\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:24 - Received: b'h\x0e~\x00:\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:24 - -> bytearray(b'h\x0e:\x00:\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:25 - Received: b'h\x0e\x80\x00<\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:25 - Received: b'h\x0e\x82\x00<\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:25 - -> bytearray(b'h\x0e<\x00<\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:26 - Received: b'h\x0e\x84\x00>\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:26 - Received: b'h\x0e\x86\x00>\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:26 - -> bytearray(b'h\x0e>\x00>\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:26 - Received: b'h\x04\x01\x00@\x00'
-2023-10-12 00:37:27 - Received: b'h\x0e\x88\x00@\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:27 - Received: b'h\x0e\x8a\x00@\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:27 - -> bytearray(b'h\x0e@\x00@\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:37:28 - Received: b'h\x0e\x8c\x00B\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:28 - Received: b'h\x0e\x8e\x00B\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:37:28 - -> bytearray(b'h\x0eB\x00B\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:42:33 - -> b'h\x04\x07\x00\x00\x00'
-2023-10-12 00:42:33 - -> bytearray(b'h\x0e\x02\x00\x00\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:42:33 - Received: b'h\x0e\x00\x00\x00\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:34 - -> bytearray(b'h\x0e\x04\x00\x02\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:42:35 - -> bytearray(b'h\x0e\x06\x00\x04\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:42:49 - -> b'h\x04\x07\x00\x00\x00'
-2023-10-12 00:42:49 - -> bytearray(b'h\x0e\x00\x00\x00\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:42:49 - Received: b'h\x0e\x00\x00\x00\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:49 - Received: b'h\x0e\x02\x00\x02\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:49 - Received: b'h\x0e\x04\x00\x02\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:49 - Received: b'h\x0e\x06\x00\x02\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:49 - Received: b'h\x0e\x08\x00\x02\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:49 - Received: b'h\x0e\n\x00\x02\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:49 - Received: b'h\x0e\x0c\x00\x02\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:50 - Received: b'h\x0e\x0e\x00\x02\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:50 - Received: b'h\x0e\x10\x00\x02\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:50 - Received: b'h\x0e\x12\x00\x02\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:50 - Received: b'h\x0e\x14\x00\x02\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:50 - Received: b'h\x0e\x16\x00\x02\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:50 - Received: b'h\x0e\x18\x00\x02\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:50 - -> bytearray(b'h\x0e\x02\x00\x02\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:42:50 - Received: b'h\x0e\x1a\x00\x04\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:50 - Received: b'h\x0e\x1c\x00\x04\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:50 - Received: b'h\x0e\x1e\x00\x04\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:50 - Received: b'h\x0e \x00\x04\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:50 - Received: b'h\x0e"\x00\x04\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:50 - Received: b'h\x0e$\x00\x04\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:51 - Received: b'h\x0e&\x00\x04\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:51 - Received: b'h\x0e(\x00\x04\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:51 - Received: b'h\x0e*\x00\x04\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:51 - Received: b'h\x0e,\x00\x04\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:51 - Received: b'h\x0e.\x00\x04\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:51 - Received: b'h\x0e0\x00\x04\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:51 - -> bytearray(b'h\x0e\x04\x00\x04\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:42:51 - Received: b'h\x0e2\x00\x06\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:51 - Received: b'h\x0e4\x00\x06\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:51 - Received: b'h\x0e6\x00\x06\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:51 - Received: b'h\x0e8\x00\x06\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:51 - Received: b'h\x0e:\x00\x06\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:51 - Received: b'h\x0e<\x00\x06\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:51 - Received: b'h\x0e>\x00\x06\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:52 - Received: b'h\x0e@\x00\x06\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:52 - Received: b'h\x0eB\x00\x06\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:52 - Received: b'h\x0eD\x00\x06\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:52 - Received: b'h\x0eF\x00\x06\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:52 - Received: b'h\x0eH\x00\x06\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:52 - -> bytearray(b'h\x0e\x06\x00\x06\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:42:52 - Received: b'h\x0eJ\x00\x08\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:52 - Received: b'h\x0eL\x00\x08\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:52 - Received: b'h\x0eN\x00\x08\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:52 - Received: b'h\x0eP\x00\x08\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:52 - Received: b'h\x0eR\x00\x08\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:52 - Received: b'h\x0eT\x00\x08\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:52 - Received: b'h\x0eV\x00\x08\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:53 - Received: b'h\x0eX\x00\x08\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:53 - Received: b'h\x0eZ\x00\x08\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:53 - Received: b'h\x0e\\\x00\x08\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:53 - Received: b'h\x0e^\x00\x08\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:53 - Received: b'h\x0e`\x00\x08\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:53 - -> bytearray(b'h\x0e\x08\x00\x08\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:42:53 - Received: b'h\x0eb\x00\n\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:53 - Received: b'h\x0ed\x00\n\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:53 - Received: b'h\x0ef\x00\n\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:53 - Received: b'h\x0eh\x00\n\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:53 - Received: b'h\x0ej\x00\n\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:53 - Received: b'h\x0el\x00\n\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:54 - Received: b'h\x0en\x00\n\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:54 - Received: b'h\x0ep\x00\n\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:54 - Received: b'h\x0er\x00\n\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:54 - Received: b'h\x0et\x00\n\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:54 - Received: b'h\x0ev\x00\n\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:54 - Received: b'h\x0ex\x00\n\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:54 - -> bytearray(b'h\x0e\n\x00\n\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:42:54 - Received: b'h\x0ez\x00\x0c\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:54 - Received: b'h\x0e|\x00\x0c\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:54 - Received: b'h\x0e~\x00\x0c\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:54 - Received: b'h\x0e\x80\x00\x0c\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:54 - Received: b'h\x0e\x82\x00\x0c\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:54 - Received: b'h\x0e\x84\x00\x0c\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:55 - Received: b'h\x0e\x86\x00\x0c\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:55 - Received: b'h\x0e\x88\x00\x0c\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:55 - Received: b'h\x0e\x8a\x00\x0c\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:55 - Received: b'h\x0e\x8c\x00\x0c\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:55 - Received: b'h\x0e\x8e\x00\x0c\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:55 - Received: b'h\x0e\x90\x00\x0c\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:55 - -> bytearray(b'h\x0e\x0c\x00\x0c\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:42:55 - Received: b'h\x0e\x92\x00\x0e\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:55 - Received: b'h\x0e\x94\x00\x0e\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:55 - Received: b'h\x0e\x96\x00\x0e\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:55 - Received: b'h\x0e\x98\x00\x0e\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:55 - Received: b'h\x0e\x9a\x00\x0e\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:55 - Received: b'h\x0e\x9c\x00\x0e\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:55 - Received: b'h\x0e\x9e\x00\x0e\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:56 - Received: b'h\x0e\xa0\x00\x0e\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:56 - Received: b'h\x0e\xa2\x00\x0e\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:56 - Received: b'h\x0e\xa4\x00\x0e\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:56 - Received: b'h\x0e\xa6\x00\x0e\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:56 - Received: b'h\x0e\xa8\x00\x0e\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:56 - -> bytearray(b'h\x0e\x0e\x00\x0e\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:42:56 - Received: b'h\x04\x01\x00\x10\x00'
-2023-10-12 00:42:56 - Received: b'h\x0e\xaa\x00\x10\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:56 - Received: b'h\x0e\xac\x00\x10\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:56 - Received: b'h\x0e\xae\x00\x10\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:57 - -> bytearray(b'h\x0e\x10\x00\x10\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:42:57 - Received: b'h\x0e\xb0\x00\x12\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:57 - Received: b'h\x0e\xb2\x00\x12\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:58 - -> bytearray(b'h\x0e\x12\x00\x12\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:42:58 - Received: b'h\x0e\xb4\x00\x14\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:58 - Received: b'h\x0e\xb6\x00\x14\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:59 - -> bytearray(b'h\x0e\x14\x00\x14\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:42:59 - Received: b'h\x0e\xb8\x00\x16\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:42:59 - Received: b'h\x0e\xba\x00\x16\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:00 - -> bytearray(b'h\x0e\x16\x00\x16\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:00 - Received: b'h\x0e\xbc\x00\x18\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:00 - Received: b'h\x0e\xbe\x00\x18\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:01 - -> bytearray(b'h\x0e\x18\x00\x18\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:01 - Received: b'h\x0e\xc0\x00\x1a\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:01 - Received: b'h\x0e\xc2\x00\x1a\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:02 - -> bytearray(b'h\x0e\x1a\x00\x1a\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:02 - Received: b'h\x0e\xc4\x00\x1c\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:02 - Received: b'h\x0e\xc6\x00\x1c\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:03 - -> bytearray(b'h\x0e\x1c\x00\x1c\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:03 - Received: b'h\x0e\xc8\x00\x1e\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:03 - Received: b'h\x0e\xca\x00\x1e\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:04 - -> bytearray(b'h\x0e\x1e\x00\x1e\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:04 - Received: b'h\x04\x01\x00 \x00'
-2023-10-12 00:43:04 - Received: b'h\x0e\xcc\x00 \x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:04 - Received: b'h\x0e\xce\x00 \x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:05 - -> bytearray(b'h\x0e \x00 \x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:05 - Received: b'h\x0e\xd0\x00"\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:05 - Received: b'h\x0e\xd2\x00"\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:06 - -> bytearray(b'h\x0e"\x00"\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:06 - Received: b'h\x0e\xd4\x00$\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:06 - Received: b'h\x0e\xd6\x00$\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:07 - -> bytearray(b'h\x0e$\x00$\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:07 - Received: b'h\x0e\xd8\x00&\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:07 - Received: b'h\x0e\xda\x00&\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:08 - -> bytearray(b'h\x0e&\x00&\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:08 - Received: b'h\x0e\xdc\x00(\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:08 - Received: b'h\x0e\xde\x00(\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:09 - -> bytearray(b'h\x0e(\x00(\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:09 - Received: b'h\x0e\xe0\x00*\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:09 - Received: b'h\x0e\xe2\x00*\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:10 - -> bytearray(b'h\x0e*\x00*\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:10 - Received: b'h\x0e\xe4\x00,\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:10 - Received: b'h\x0e\xe6\x00,\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:11 - -> bytearray(b'h\x0e,\x00,\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:11 - Received: b'h\x0e\xe8\x00.\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:11 - Received: b'h\x0e\xea\x00.\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:12 - -> bytearray(b'h\x0e.\x00.\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:12 - Received: b'h\x04\x01\x000\x00'
-2023-10-12 00:43:12 - Received: b'h\x0e\xec\x000\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:12 - Received: b'h\x0e\xee\x000\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:13 - -> bytearray(b'h\x0e0\x000\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:13 - Received: b'h\x0e\xf0\x002\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:13 - Received: b'h\x0e\xf2\x002\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:14 - -> bytearray(b'h\x0e2\x002\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:14 - Received: b'h\x0e\xf4\x004\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:14 - Received: b'h\x0e\xf6\x004\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:15 - -> bytearray(b'h\x0e4\x004\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:15 - Received: b'h\x0e\xf8\x006\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:15 - Received: b'h\x0e\xfa\x006\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:16 - -> bytearray(b'h\x0e6\x006\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:16 - Received: b'h\x0e\xfc\x008\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:16 - Received: b'h\x0e\xfe\x008\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:17 - -> bytearray(b'h\x0e8\x008\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:17 - Received: b'h\x0e\x00\x01:\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:17 - Received: b'h\x0e\x02\x01:\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:18 - -> bytearray(b'h\x0e:\x00:\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:18 - Received: b'h\x0e\x04\x01<\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:18 - Received: b'h\x0e\x06\x01<\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:19 - -> bytearray(b'h\x0e<\x00<\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:19 - Received: b'h\x0e\x08\x01>\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:19 - Received: b'h\x0e\n\x01>\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:20 - -> bytearray(b'h\x0e>\x00>\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:20 - Received: b'h\x04\x01\x00@\x00'
-2023-10-12 00:43:20 - Received: b'h\x0e\x0c\x01@\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:20 - Received: b'h\x0e\x0e\x01@\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:21 - -> bytearray(b'h\x0e@\x00@\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:21 - Received: b'h\x0e\x10\x01B\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:21 - Received: b'h\x0e\x12\x01B\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:22 - -> bytearray(b'h\x0eB\x00B\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:22 - Received: b'h\x0e\x14\x01D\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:22 - Received: b'h\x0e\x16\x01D\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:23 - -> bytearray(b'h\x0eD\x00D\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:23 - Received: b'h\x0e\x18\x01F\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:23 - Received: b'h\x0e\x1a\x01F\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:24 - -> bytearray(b'h\x0eF\x00F\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:24 - Received: b'h\x0e\x1c\x01H\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:24 - Received: b'h\x0e\x1e\x01H\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:25 - -> bytearray(b'h\x0eH\x00H\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:25 - Received: b'h\x0e \x01J\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:25 - Received: b'h\x0e"\x01J\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:26 - -> bytearray(b'h\x0eJ\x00J\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:26 - Received: b'h\x0e$\x01L\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:26 - Received: b'h\x0e&\x01L\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:27 - -> bytearray(b'h\x0eL\x00L\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:27 - Received: b'h\x0e(\x01N\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:27 - Received: b'h\x0e*\x01N\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:28 - -> bytearray(b'h\x0eN\x00N\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:28 - Received: b'h\x04\x01\x00P\x00'
-2023-10-12 00:43:28 - Received: b'h\x0e,\x01P\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:28 - Received: b'h\x0e.\x01P\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:29 - -> bytearray(b'h\x0eP\x00P\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:29 - Received: b'h\x0e0\x01R\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:29 - Received: b'h\x0e2\x01R\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:30 - -> bytearray(b'h\x0eR\x00R\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:30 - Received: b'h\x0e4\x01T\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:30 - Received: b'h\x0e6\x01T\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:31 - -> bytearray(b'h\x0eT\x00T\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:31 - Received: b'h\x0e8\x01V\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:31 - Received: b'h\x0e:\x01V\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:32 - -> bytearray(b'h\x0eV\x00V\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:32 - Received: b'h\x0e<\x01X\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:32 - Received: b'h\x0e>\x01X\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:33 - -> bytearray(b'h\x0eX\x00X\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:33 - Received: b'h\x0e@\x01Z\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:33 - Received: b'h\x0eB\x01Z\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:34 - -> bytearray(b'h\x0eZ\x00Z\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:34 - Received: b'h\x0eD\x01\\\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:34 - Received: b'h\x0eF\x01\\\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:35 - -> bytearray(b'h\x0e\\\x00\\\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:35 - Received: b'h\x0eH\x01^\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:35 - Received: b'h\x0eJ\x01^\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:36 - -> bytearray(b'h\x0e^\x00^\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:36 - Received: b'h\x04\x01\x00`\x00'
-2023-10-12 00:43:36 - Received: b'h\x0eL\x01`\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:36 - Received: b'h\x0eN\x01`\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:37 - -> bytearray(b'h\x0e`\x00`\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:37 - Received: b'h\x0eP\x01b\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:37 - Received: b'h\x0eR\x01b\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:38 - -> bytearray(b'h\x0eb\x00b\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:38 - Received: b'h\x0eT\x01d\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:38 - Received: b'h\x0eV\x01d\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:39 - -> bytearray(b'h\x0ed\x00d\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:39 - Received: b'h\x0eX\x01f\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:39 - Received: b'h\x0eZ\x01f\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:40 - -> bytearray(b'h\x0ef\x00f\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:40 - Received: b'h\x0e\\\x01h\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:40 - Received: b'h\x0e^\x01h\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:41 - -> bytearray(b'h\x0eh\x00h\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:41 - Received: b'h\x0e`\x01j\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:41 - Received: b'h\x0eb\x01j\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:42 - -> bytearray(b'h\x0ej\x00j\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:42 - Received: b'h\x0ed\x01l\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:42 - Received: b'h\x0ef\x01l\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:43 - -> bytearray(b'h\x0el\x00l\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:43 - Received: b'h\x0eh\x01n\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:43 - Received: b'h\x0ej\x01n\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:44 - -> bytearray(b'h\x0en\x00n\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:44 - Received: b'h\x04\x01\x00p\x00'
-2023-10-12 00:43:44 - Received: b'h\x0el\x01p\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:44 - Received: b'h\x0en\x01p\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:45 - -> bytearray(b'h\x0ep\x00p\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:45 - Received: b'h\x0ep\x01r\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:45 - Received: b'h\x0er\x01r\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:46 - -> bytearray(b'h\x0er\x00r\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:46 - Received: b'h\x0et\x01t\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:46 - Received: b'h\x0ev\x01t\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:47 - -> bytearray(b'h\x0et\x00t\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:47 - Received: b'h\x0ex\x01v\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:47 - Received: b'h\x0ez\x01v\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:48 - -> bytearray(b'h\x0ev\x00v\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:48 - Received: b'h\x0e|\x01x\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:48 - Received: b'h\x0e~\x01x\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:49 - -> bytearray(b'h\x0ex\x00x\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:49 - Received: b'h\x0e\x80\x01z\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:49 - Received: b'h\x0e\x82\x01z\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:50 - -> bytearray(b'h\x0ez\x00z\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:50 - Received: b'h\x0e\x84\x01|\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:50 - Received: b'h\x0e\x86\x01|\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:51 - -> bytearray(b'h\x0e|\x00|\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:51 - Received: b'h\x0e\x88\x01~\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:51 - Received: b'h\x0e\x8a\x01~\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:52 - -> bytearray(b'h\x0e~\x00~\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:52 - Received: b'h\x04\x01\x00\x80\x00'
-2023-10-12 00:43:52 - Received: b'h\x0e\x8c\x01\x80\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:52 - Received: b'h\x0e\x8e\x01\x80\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:53 - -> bytearray(b'h\x0e\x80\x00\x80\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:53 - Received: b'h\x0e\x90\x01\x82\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:53 - Received: b'h\x0e\x92\x01\x82\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:54 - -> bytearray(b'h\x0e\x82\x00\x82\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:54 - Received: b'h\x0e\x94\x01\x84\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:54 - Received: b'h\x0e\x96\x01\x84\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:55 - -> bytearray(b'h\x0e\x84\x00\x84\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:55 - Received: b'h\x0e\x98\x01\x86\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:55 - Received: b'h\x0e\x9a\x01\x86\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:56 - -> bytearray(b'h\x0e\x86\x00\x86\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:56 - Received: b'h\x0e\x9c\x01\x88\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:56 - Received: b'h\x0e\x9e\x01\x88\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:57 - -> bytearray(b'h\x0e\x88\x00\x88\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:57 - Received: b'h\x0e\xa0\x01\x8a\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:57 - Received: b'h\x0e\xa2\x01\x8a\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:58 - -> bytearray(b'h\x0e\x8a\x00\x8a\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:58 - Received: b'h\x0e\xa4\x01\x8c\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:58 - Received: b'h\x0e\xa6\x01\x8c\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:59 - -> bytearray(b'h\x0e\x8c\x00\x8c\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:43:59 - Received: b'h\x0e\xa8\x01\x8e\x00e\x01\x07\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:43:59 - Received: b'h\x0e\xaa\x01\x8e\x00e\x01\n\x00\x01\x00\x00\x00\x00\x05'
-2023-10-12 00:44:00 - -> bytearray(b'h\x0e\x8e\x00\x8e\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:50:52 - -> b'h\x04\x07\x00\x00\x00'
-2023-10-12 00:50:52 - -> bytearray(b'h\x0e\x00\x00\x00\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:50:52 - Received: b'h\x0e\x00\x00\x02\x00e\x01l\x00\xff\xff\x00\x00\x00\x05'
-2023-10-12 00:50:53 - -> bytearray(b'h\x0e\x04\x00\x04\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:50:54 - -> bytearray(b'h\x0e\x08\x00\x08\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:51:07 - -> b'h\x04\x07\x00\x00\x00'
-2023-10-12 00:51:07 - -> bytearray(b'h\x0e\x00\x00\x00\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:51:07 - Received: b'h\x0e\x00\x00\x02\x00e\x01l\x00\xff\xff\x00\x00\x00\x05'
-2023-10-12 00:51:08 - -> bytearray(b'h\x0e\x04\x00\x02\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:51:09 - -> bytearray(b'h\x0e\x08\x00\x04\x00e\x01\x06\x00\xff\xff\x00\x00\x00\x05')
-2023-10-12 00:51:46 - -> b'h\x04\x07\x00\x00\x00'
+2023-10-12 06:45:03 - -> 68 04 07 00 00 00
+2023-10-12 06:45:03 - -> 68 04 01 00 00 00
+2023-10-12 06:45:03 - -> 68 0e 00 00 00 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - -> 68 04 02 00 00 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - <- 68 0e 00 00 04 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - <- 68 0e 02 00 04 00 64 01 07 00 ff ff 00 00 00 05 68 16 04 00 04 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00 68 0e 06 00 04 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - -> 68 04 01 00 04 00
+2023-10-12 06:45:03 - -> 68 0e 04 00 04 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - -> 68 04 06 00 04 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - <- 68 0e 08 00 08 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - <- 68 0e 0a 00 08 00 64 01 07 00 ff ff 00 00 00 05 68 16 0c 00 08 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00 68 0e 0e 00 08 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - -> 68 04 01 00 08 00
+2023-10-12 06:45:03 - -> 68 0e 08 00 08 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - -> 68 04 0a 00 08 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - <- 68 0e 10 00 0c 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - <- 68 0e 12 00 0c 00 64 01 07 00 ff ff 00 00 00 05 68 16 14 00 0c 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00 68 0e 16 00 0c 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - -> 68 04 01 00 0c 00
+2023-10-12 06:45:03 - -> 68 0e 0c 00 0c 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - -> 68 04 0e 00 0c 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - <- 68 0e 18 00 10 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - <- 68 0e 1a 00 10 00 64 01 07 00 ff ff 00 00 00 05 68 16 1c 00 10 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00 68 0e 1e 00 10 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - -> 68 04 01 00 10 00
+2023-10-12 06:45:03 - -> 68 0e 10 00 10 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - -> 68 04 12 00 10 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - <- 68 0e 20 00 14 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - <- 68 0e 22 00 14 00 64 01 07 00 ff ff 00 00 00 05 68 16 24 00 14 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00 68 0e 26 00 14 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - -> 68 04 01 00 14 00
+2023-10-12 06:45:03 - -> 68 0e 14 00 14 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - -> 68 04 16 00 14 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - <- 68 0e 28 00 18 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - <- 68 0e 2a 00 18 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - -> 68 04 01 00 18 00
+2023-10-12 06:45:03 - -> 68 0e 18 00 18 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - <- 68 16 2c 00 18 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:03 - -> 68 04 1a 00 18 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - <- 68 0e 2e 00 18 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - -> 68 04 01 00 1c 00
+2023-10-12 06:45:03 - -> 68 0e 1c 00 1c 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - <- 68 0e 30 00 1c 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - -> 68 04 1e 00 1c 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - <- 68 0e 32 00 20 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - -> 68 04 01 00 20 00
+2023-10-12 06:45:03 - -> 68 0e 20 00 20 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - <- 68 16 34 00 20 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:03 - -> 68 04 22 00 20 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:03 - <- 68 0e 36 00 20 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - -> 68 04 01 00 24 00
+2023-10-12 06:45:04 - -> 68 0e 24 00 24 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - <- 68 0e 38 00 24 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - -> 68 04 26 00 24 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - <- 68 0e 3a 00 28 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - -> 68 04 01 00 28 00
+2023-10-12 06:45:04 - -> 68 0e 28 00 28 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - <- 68 16 3c 00 28 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:04 - -> 68 04 2a 00 28 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - <- 68 0e 3e 00 28 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - -> 68 04 01 00 2c 00
+2023-10-12 06:45:04 - -> 68 0e 2c 00 2c 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - <- 68 0e 40 00 2c 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - -> 68 04 2e 00 2c 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - <- 68 0e 42 00 30 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - -> 68 04 01 00 30 00
+2023-10-12 06:45:04 - -> 68 0e 30 00 30 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - <- 68 16 44 00 30 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:04 - -> 68 04 32 00 30 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - <- 68 0e 46 00 30 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - -> 68 04 01 00 34 00
+2023-10-12 06:45:04 - -> 68 0e 34 00 34 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - <- 68 0e 48 00 34 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - -> 68 04 36 00 34 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - <- 68 0e 4a 00 36 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - -> 68 04 01 00 38 00
+2023-10-12 06:45:04 - -> 68 0e 38 00 38 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - <- 68 16 4c 00 38 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:04 - -> 68 04 3a 00 38 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - <- 68 0e 4e 00 38 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - -> 68 04 01 00 3c 00
+2023-10-12 06:45:04 - -> 68 0e 3c 00 3c 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - <- 68 0e 50 00 3c 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - -> 68 04 3e 00 3c 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - <- 68 0e 52 00 40 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - -> 68 04 01 00 40 00
+2023-10-12 06:45:04 - -> 68 0e 40 00 40 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - <- 68 16 54 00 40 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:04 - -> 68 04 42 00 40 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - <- 68 0e 56 00 40 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - -> 68 04 01 00 44 00
+2023-10-12 06:45:04 - -> 68 0e 44 00 44 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - <- 68 0e 58 00 44 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - -> 68 04 46 00 44 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - <- 68 0e 5a 00 48 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - -> 68 04 01 00 48 00
+2023-10-12 06:45:04 - -> 68 0e 48 00 48 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:04 - <- 68 16 5c 00 48 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:04 - -> 68 04 4a 00 48 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - <- 68 0e 5e 00 48 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - -> 68 04 01 00 4c 00
+2023-10-12 06:45:05 - -> 68 0e 4c 00 4c 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - <- 68 0e 60 00 4c 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - -> 68 04 4e 00 4c 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - <- 68 0e 62 00 50 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - -> 68 04 01 00 50 00
+2023-10-12 06:45:05 - -> 68 0e 50 00 50 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - <- 68 16 64 00 50 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:05 - -> 68 04 52 00 50 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - <- 68 0e 66 00 50 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - -> 68 04 01 00 54 00
+2023-10-12 06:45:05 - -> 68 0e 54 00 54 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - <- 68 0e 68 00 54 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - -> 68 04 56 00 54 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - <- 68 0e 6a 00 58 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - -> 68 04 01 00 58 00
+2023-10-12 06:45:05 - -> 68 0e 58 00 58 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - <- 68 16 6c 00 58 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:05 - -> 68 04 5a 00 58 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - <- 68 0e 6e 00 58 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - -> 68 04 01 00 5c 00
+2023-10-12 06:45:05 - -> 68 0e 5c 00 5c 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - <- 68 0e 70 00 5c 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - -> 68 04 5e 00 5c 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - <- 68 0e 72 00 60 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - -> 68 04 01 00 60 00
+2023-10-12 06:45:05 - -> 68 0e 60 00 60 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - <- 68 16 74 00 60 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:05 - -> 68 04 62 00 60 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - <- 68 0e 76 00 60 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - -> 68 04 01 00 64 00
+2023-10-12 06:45:05 - -> 68 0e 64 00 64 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - <- 68 0e 78 00 64 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - -> 68 04 66 00 64 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - <- 68 0e 7a 00 68 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - -> 68 04 01 00 68 00
+2023-10-12 06:45:05 - -> 68 0e 68 00 68 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - <- 68 16 7c 00 68 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:05 - -> 68 04 6a 00 68 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - <- 68 0e 7e 00 68 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - -> 68 04 01 00 6c 00
+2023-10-12 06:45:05 - -> 68 0e 6c 00 6c 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - <- 68 0e 80 00 6c 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - -> 68 04 6e 00 6c 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:05 - <- 68 0e 82 00 70 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - -> 68 04 01 00 70 00
+2023-10-12 06:45:06 - -> 68 0e 70 00 70 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - <- 68 16 84 00 70 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:06 - -> 68 04 72 00 70 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - <- 68 0e 86 00 70 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - -> 68 04 01 00 74 00
+2023-10-12 06:45:06 - -> 68 0e 74 00 74 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - <- 68 0e 88 00 74 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - -> 68 04 76 00 74 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - <- 68 0e 8a 00 78 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - -> 68 04 01 00 78 00
+2023-10-12 06:45:06 - -> 68 0e 78 00 78 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - <- 68 16 8c 00 78 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:06 - -> 68 04 7a 00 78 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - <- 68 0e 8e 00 78 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - -> 68 04 01 00 7c 00
+2023-10-12 06:45:06 - -> 68 0e 7c 00 7c 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - <- 68 0e 90 00 7c 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - -> 68 04 7e 00 7c 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - <- 68 0e 92 00 7e 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - -> 68 04 01 00 80 00
+2023-10-12 06:45:06 - -> 68 0e 80 00 80 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - <- 68 16 94 00 80 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:06 - -> 68 04 82 00 80 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - <- 68 0e 96 00 80 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - -> 68 04 01 00 84 00
+2023-10-12 06:45:06 - -> 68 0e 84 00 84 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - <- 68 0e 98 00 84 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - -> 68 04 86 00 84 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - <- 68 0e 9a 00 86 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - -> 68 04 01 00 88 00
+2023-10-12 06:45:06 - -> 68 0e 88 00 88 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - <- 68 16 9c 00 88 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:06 - -> 68 04 8a 00 88 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - <- 68 0e 9e 00 88 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - -> 68 04 01 00 8c 00
+2023-10-12 06:45:06 - -> 68 0e 8c 00 8c 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - <- 68 0e a0 00 8c 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - -> 68 04 8e 00 8c 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - <- 68 0e a2 00 90 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - -> 68 04 01 00 90 00
+2023-10-12 06:45:06 - -> 68 0e 90 00 90 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - <- 68 16 a4 00 90 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:06 - -> 68 04 92 00 90 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - <- 68 0e a6 00 90 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - -> 68 04 01 00 94 00
+2023-10-12 06:45:06 - -> 68 0e 94 00 94 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - <- 68 0e a8 00 94 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - -> 68 04 96 00 94 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:06 - <- 68 0e aa 00 98 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - -> 68 04 01 00 98 00
+2023-10-12 06:45:07 - -> 68 0e 98 00 98 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - <- 68 16 ac 00 98 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:07 - -> 68 04 9a 00 98 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - <- 68 0e ae 00 98 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - -> 68 04 01 00 9c 00
+2023-10-12 06:45:07 - -> 68 0e 9c 00 9c 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - <- 68 0e b0 00 9c 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - -> 68 04 9e 00 9c 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - <- 68 0e b2 00 a0 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - -> 68 04 01 00 a0 00
+2023-10-12 06:45:07 - -> 68 0e a0 00 a0 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - <- 68 16 b4 00 a0 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:07 - -> 68 04 a2 00 a0 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - <- 68 0e b6 00 a0 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - -> 68 04 01 00 a4 00
+2023-10-12 06:45:07 - -> 68 0e a4 00 a4 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - <- 68 0e b8 00 a4 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - -> 68 04 a6 00 a4 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - <- 68 0e ba 00 a8 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - -> 68 04 01 00 a8 00
+2023-10-12 06:45:07 - -> 68 0e a8 00 a8 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - <- 68 16 bc 00 a8 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:07 - -> 68 04 aa 00 a8 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - <- 68 0e be 00 a8 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - -> 68 04 01 00 ac 00
+2023-10-12 06:45:07 - -> 68 0e ac 00 ac 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - <- 68 0e c0 00 ac 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - -> 68 04 ae 00 ac 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - <- 68 0e c2 00 b0 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - -> 68 04 01 00 b0 00
+2023-10-12 06:45:07 - -> 68 0e b0 00 b0 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - <- 68 16 c4 00 b0 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:07 - -> 68 04 b2 00 b0 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - <- 68 0e c6 00 b0 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - -> 68 04 01 00 b4 00
+2023-10-12 06:45:07 - -> 68 0e b4 00 b4 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - <- 68 0e c8 00 b4 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - -> 68 04 b6 00 b4 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - <- 68 0e ca 00 b8 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - -> 68 04 01 00 b8 00
+2023-10-12 06:45:07 - -> 68 0e b8 00 b8 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - <- 68 16 cc 00 b8 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:07 - -> 68 04 ba 00 b8 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:07 - <- 68 0e ce 00 b8 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - -> 68 04 01 00 bc 00
+2023-10-12 06:45:08 - -> 68 0e bc 00 bc 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - <- 68 0e d0 00 bc 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - -> 68 04 be 00 bc 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - <- 68 0e d2 00 be 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - -> 68 04 01 00 c0 00
+2023-10-12 06:45:08 - -> 68 0e c0 00 c0 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - <- 68 16 d4 00 c0 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:08 - -> 68 04 c2 00 c0 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - <- 68 0e d6 00 c0 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - -> 68 04 01 00 c4 00
+2023-10-12 06:45:08 - -> 68 0e c4 00 c4 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - <- 68 0e d8 00 c4 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - -> 68 04 c6 00 c4 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - <- 68 0e da 00 c8 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - -> 68 04 01 00 c8 00
+2023-10-12 06:45:08 - -> 68 0e c8 00 c8 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - <- 68 16 dc 00 c8 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:08 - -> 68 04 ca 00 c8 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - <- 68 0e de 00 c8 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - -> 68 04 01 00 cc 00
+2023-10-12 06:45:08 - -> 68 0e cc 00 cc 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - <- 68 0e e0 00 cc 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - -> 68 04 ce 00 cc 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - <- 68 0e e2 00 d0 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - -> 68 04 01 00 d0 00
+2023-10-12 06:45:08 - -> 68 0e d0 00 d0 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - <- 68 16 e4 00 d0 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:08 - -> 68 04 d2 00 d0 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - <- 68 0e e6 00 d0 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - -> 68 04 01 00 d4 00
+2023-10-12 06:45:08 - -> 68 0e d4 00 d4 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - <- 68 0e e8 00 d4 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - -> 68 04 d6 00 d4 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - <- 68 0e ea 00 d8 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - -> 68 04 01 00 d8 00
+2023-10-12 06:45:08 - -> 68 0e d8 00 d8 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - <- 68 16 ec 00 d8 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:08 - -> 68 04 da 00 d8 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - <- 68 0e ee 00 d8 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - -> 68 04 01 00 dc 00
+2023-10-12 06:45:08 - -> 68 0e dc 00 dc 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - <- 68 0e f0 00 dc 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - -> 68 04 de 00 dc 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - <- 68 0e f2 00 e0 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - -> 68 04 01 00 e0 00
+2023-10-12 06:45:08 - -> 68 0e e0 00 e0 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - <- 68 16 f4 00 e0 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:08 - -> 68 04 e2 00 e0 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:08 - <- 68 0e f6 00 e0 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - -> 68 04 01 00 e4 00
+2023-10-12 06:45:09 - -> 68 0e e4 00 e4 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - <- 68 0e f8 00 e4 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - -> 68 04 e6 00 e4 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - <- 68 0e fa 00 e8 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - -> 68 04 01 00 e8 00
+2023-10-12 06:45:09 - -> 68 0e e8 00 e8 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - <- 68 16 fc 00 e8 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:09 - -> 68 04 ea 00 e8 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - <- 68 0e fe 00 e8 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - -> 68 04 01 00 ec 00
+2023-10-12 06:45:09 - -> 68 0e ec 00 ec 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - <- 68 0e 00 01 ec 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - -> 68 04 ee 00 ec 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - <- 68 0e 02 01 f0 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - -> 68 04 01 00 f0 00
+2023-10-12 06:45:09 - -> 68 0e f0 00 f0 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - <- 68 16 04 01 f0 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:09 - -> 68 04 f2 00 f0 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - <- 68 0e 06 01 f0 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - -> 68 04 01 00 f4 00
+2023-10-12 06:45:09 - -> 68 0e f4 00 f4 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - <- 68 0e 08 01 f4 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - -> 68 04 f6 00 f4 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - <- 68 0e 0a 01 f8 00 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - -> 68 04 01 00 f8 00
+2023-10-12 06:45:09 - -> 68 0e f8 00 f8 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - <- 68 16 0c 01 f8 00 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:09 - -> 68 04 fa 00 f8 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - <- 68 0e 0e 01 f8 00 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - -> 68 04 01 00 fc 00
+2023-10-12 06:45:09 - -> 68 0e fc 00 fc 00 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - <- 68 0e 10 01 fc 00 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - -> 68 04 fe 00 fc 00 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - <- 68 0e 12 01 00 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - -> 68 04 01 00 00 01
+2023-10-12 06:45:09 - -> 68 0e 00 01 00 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - <- 68 16 14 01 00 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:09 - -> 68 04 02 01 00 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - <- 68 0e 16 01 00 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - -> 68 04 01 00 04 01
+2023-10-12 06:45:09 - -> 68 0e 04 01 04 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - <- 68 0e 18 01 04 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - -> 68 04 06 01 04 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - <- 68 0e 1a 01 08 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - -> 68 04 01 00 08 01
+2023-10-12 06:45:09 - -> 68 0e 08 01 08 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - <- 68 16 1c 01 08 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:09 - -> 68 04 0a 01 08 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:09 - <- 68 0e 1e 01 08 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - -> 68 04 01 00 0c 01
+2023-10-12 06:45:10 - -> 68 0e 0c 01 0c 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - <- 68 0e 20 01 0c 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - -> 68 04 0e 01 0c 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - <- 68 0e 22 01 10 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - -> 68 04 01 00 10 01
+2023-10-12 06:45:10 - -> 68 0e 10 01 10 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - <- 68 16 24 01 10 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:10 - -> 68 04 12 01 10 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - <- 68 0e 26 01 10 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - -> 68 04 01 00 14 01
+2023-10-12 06:45:10 - -> 68 0e 14 01 14 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - <- 68 0e 28 01 14 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - -> 68 04 16 01 14 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - <- 68 0e 2a 01 18 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - -> 68 04 01 00 18 01
+2023-10-12 06:45:10 - -> 68 0e 18 01 18 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - <- 68 16 2c 01 18 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:10 - -> 68 04 1a 01 18 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - <- 68 0e 2e 01 18 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - -> 68 04 01 00 1c 01
+2023-10-12 06:45:10 - -> 68 0e 1c 01 1c 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - <- 68 0e 30 01 1c 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - -> 68 04 1e 01 1c 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - <- 68 0e 32 01 20 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - -> 68 04 01 00 20 01
+2023-10-12 06:45:10 - -> 68 0e 20 01 20 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - <- 68 16 34 01 20 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:10 - -> 68 04 22 01 20 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - <- 68 0e 36 01 20 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - -> 68 04 01 00 24 01
+2023-10-12 06:45:10 - -> 68 0e 24 01 24 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - <- 68 0e 38 01 24 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - -> 68 04 26 01 24 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - <- 68 0e 3a 01 28 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - -> 68 04 01 00 28 01
+2023-10-12 06:45:10 - -> 68 0e 28 01 28 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - <- 68 16 3c 01 28 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:10 - -> 68 04 2a 01 28 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - <- 68 0e 3e 01 28 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - -> 68 04 01 00 2c 01
+2023-10-12 06:45:10 - -> 68 0e 2c 01 2c 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - <- 68 0e 40 01 2c 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - -> 68 04 2e 01 2c 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - <- 68 0e 42 01 30 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - -> 68 04 01 00 30 01
+2023-10-12 06:45:10 - -> 68 0e 30 01 30 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - <- 68 16 44 01 30 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:10 - -> 68 04 32 01 30 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:10 - <- 68 0e 46 01 30 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - -> 68 04 01 00 34 01
+2023-10-12 06:45:11 - -> 68 0e 34 01 34 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - <- 68 0e 48 01 34 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - -> 68 04 36 01 34 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - <- 68 0e 4a 01 36 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - -> 68 04 01 00 38 01
+2023-10-12 06:45:11 - -> 68 0e 38 01 38 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - <- 68 16 4c 01 38 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:11 - -> 68 04 3a 01 38 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - <- 68 0e 4e 01 38 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - -> 68 04 01 00 3c 01
+2023-10-12 06:45:11 - -> 68 0e 3c 01 3c 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - <- 68 0e 50 01 3c 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - -> 68 04 3e 01 3c 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - <- 68 0e 52 01 40 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - -> 68 04 01 00 40 01
+2023-10-12 06:45:11 - -> 68 0e 40 01 40 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - <- 68 16 54 01 40 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:11 - -> 68 04 42 01 40 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - <- 68 0e 56 01 40 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - -> 68 04 01 00 44 01
+2023-10-12 06:45:11 - -> 68 0e 44 01 44 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - <- 68 0e 58 01 44 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - -> 68 04 46 01 44 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - <- 68 0e 5a 01 46 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - -> 68 04 01 00 48 01
+2023-10-12 06:45:11 - -> 68 0e 48 01 48 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - <- 68 16 5c 01 48 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:11 - -> 68 04 4a 01 48 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - <- 68 0e 5e 01 48 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - -> 68 04 01 00 4c 01
+2023-10-12 06:45:11 - -> 68 0e 4c 01 4c 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - <- 68 0e 60 01 4c 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - -> 68 04 4e 01 4c 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - <- 68 0e 62 01 50 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - -> 68 04 01 00 50 01
+2023-10-12 06:45:11 - -> 68 0e 50 01 50 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - <- 68 16 64 01 50 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:11 - -> 68 04 52 01 50 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - <- 68 0e 66 01 50 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - -> 68 04 01 00 54 01
+2023-10-12 06:45:11 - -> 68 0e 54 01 54 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - <- 68 0e 68 01 54 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - -> 68 04 56 01 54 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:11 - <- 68 0e 6a 01 58 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - -> 68 04 01 00 58 01
+2023-10-12 06:45:12 - -> 68 0e 58 01 58 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - <- 68 16 6c 01 58 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:12 - -> 68 04 5a 01 58 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - <- 68 0e 6e 01 58 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - -> 68 04 01 00 5c 01
+2023-10-12 06:45:12 - -> 68 0e 5c 01 5c 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - <- 68 0e 70 01 5c 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - -> 68 04 5e 01 5c 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - <- 68 0e 72 01 60 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - -> 68 04 01 00 60 01
+2023-10-12 06:45:12 - -> 68 0e 60 01 60 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - <- 68 16 74 01 60 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:12 - -> 68 04 62 01 60 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - <- 68 0e 76 01 60 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - -> 68 04 01 00 64 01
+2023-10-12 06:45:12 - -> 68 0e 64 01 64 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - <- 68 0e 78 01 64 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - -> 68 04 66 01 64 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - <- 68 0e 7a 01 66 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - -> 68 04 01 00 68 01
+2023-10-12 06:45:12 - -> 68 0e 68 01 68 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - <- 68 16 7c 01 68 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:12 - -> 68 04 6a 01 68 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - <- 68 0e 7e 01 68 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - -> 68 04 01 00 6c 01
+2023-10-12 06:45:12 - -> 68 0e 6c 01 6c 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - <- 68 0e 80 01 6c 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - -> 68 04 6e 01 6c 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - <- 68 0e 82 01 70 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - -> 68 04 01 00 70 01
+2023-10-12 06:45:12 - -> 68 0e 70 01 70 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - <- 68 16 84 01 70 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:12 - -> 68 04 72 01 70 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - <- 68 0e 86 01 70 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - -> 68 04 01 00 74 01
+2023-10-12 06:45:12 - -> 68 0e 74 01 74 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - <- 68 0e 88 01 74 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - -> 68 04 76 01 74 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - <- 68 0e 8a 01 76 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - -> 68 04 01 00 78 01
+2023-10-12 06:45:12 - -> 68 0e 78 01 78 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - <- 68 16 8c 01 78 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:12 - -> 68 04 7a 01 78 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - <- 68 0e 8e 01 78 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - -> 68 04 01 00 7c 01
+2023-10-12 06:45:12 - -> 68 0e 7c 01 7c 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - <- 68 0e 90 01 7c 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - -> 68 04 7e 01 7c 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:12 - <- 68 0e 92 01 80 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - -> 68 04 01 00 80 01
+2023-10-12 06:45:13 - -> 68 0e 80 01 80 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - <- 68 16 94 01 80 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:13 - -> 68 04 82 01 80 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - <- 68 0e 96 01 80 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - -> 68 04 01 00 84 01
+2023-10-12 06:45:13 - -> 68 0e 84 01 84 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - <- 68 0e 98 01 84 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - -> 68 04 86 01 84 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - <- 68 0e 9a 01 88 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - -> 68 04 01 00 88 01
+2023-10-12 06:45:13 - -> 68 0e 88 01 88 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - <- 68 16 9c 01 88 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:13 - -> 68 04 8a 01 88 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - <- 68 0e 9e 01 88 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - -> 68 04 01 00 8c 01
+2023-10-12 06:45:13 - -> 68 0e 8c 01 8c 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - <- 68 0e a0 01 8c 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - -> 68 04 8e 01 8c 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - <- 68 0e a2 01 90 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - -> 68 04 01 00 90 01
+2023-10-12 06:45:13 - -> 68 0e 90 01 90 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - <- 68 16 a4 01 90 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:13 - -> 68 04 92 01 90 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - <- 68 0e a6 01 90 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - -> 68 04 01 00 94 01
+2023-10-12 06:45:13 - -> 68 0e 94 01 94 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - <- 68 0e a8 01 94 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - -> 68 04 96 01 94 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - <- 68 0e aa 01 96 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - -> 68 04 01 00 98 01
+2023-10-12 06:45:13 - -> 68 0e 98 01 98 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - <- 68 16 ac 01 98 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:13 - -> 68 04 9a 01 98 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - <- 68 0e ae 01 98 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - -> 68 04 01 00 9c 01
+2023-10-12 06:45:13 - -> 68 0e 9c 01 9c 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - <- 68 0e b0 01 9c 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - -> 68 04 9e 01 9c 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - <- 68 0e b2 01 a0 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - -> 68 04 01 00 a0 01
+2023-10-12 06:45:13 - -> 68 0e a0 01 a0 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - <- 68 16 b4 01 a0 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:13 - -> 68 04 a2 01 a0 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - <- 68 0e b6 01 a0 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - -> 68 04 01 00 a4 01
+2023-10-12 06:45:13 - -> 68 0e a4 01 a4 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - <- 68 0e b8 01 a4 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - -> 68 04 a6 01 a4 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:13 - <- 68 0e ba 01 a8 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - -> 68 04 01 00 a8 01
+2023-10-12 06:45:14 - -> 68 0e a8 01 a8 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - <- 68 16 bc 01 a8 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:14 - -> 68 04 aa 01 a8 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - <- 68 0e be 01 a8 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - -> 68 04 01 00 ac 01
+2023-10-12 06:45:14 - -> 68 0e ac 01 ac 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - <- 68 0e c0 01 ac 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - -> 68 04 ae 01 ac 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - <- 68 0e c2 01 b0 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - -> 68 04 01 00 b0 01
+2023-10-12 06:45:14 - -> 68 0e b0 01 b0 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - <- 68 16 c4 01 b0 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:14 - -> 68 04 b2 01 b0 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - <- 68 0e c6 01 b0 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - -> 68 04 01 00 b4 01
+2023-10-12 06:45:14 - -> 68 0e b4 01 b4 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - <- 68 0e c8 01 b4 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - -> 68 04 b6 01 b4 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - <- 68 0e ca 01 b8 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - -> 68 04 01 00 b8 01
+2023-10-12 06:45:14 - -> 68 0e b8 01 b8 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - <- 68 16 cc 01 b8 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:14 - -> 68 04 ba 01 b8 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - <- 68 0e ce 01 b8 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - -> 68 04 01 00 bc 01
+2023-10-12 06:45:14 - -> 68 0e bc 01 bc 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - <- 68 0e d0 01 bc 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - -> 68 04 be 01 bc 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - <- 68 0e d2 01 c0 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - -> 68 04 01 00 c0 01
+2023-10-12 06:45:14 - -> 68 0e c0 01 c0 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - <- 68 16 d4 01 c0 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:14 - -> 68 04 c2 01 c0 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - <- 68 0e d6 01 c0 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - -> 68 04 01 00 c4 01
+2023-10-12 06:45:14 - -> 68 0e c4 01 c4 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - <- 68 0e d8 01 c4 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - -> 68 04 c6 01 c4 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - <- 68 0e da 01 c8 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - -> 68 04 01 00 c8 01
+2023-10-12 06:45:14 - -> 68 0e c8 01 c8 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - <- 68 16 dc 01 c8 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:14 - -> 68 04 ca 01 c8 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:14 - <- 68 0e de 01 c8 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - -> 68 04 01 00 cc 01
+2023-10-12 06:45:15 - -> 68 0e cc 01 cc 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - <- 68 0e e0 01 cc 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - -> 68 04 ce 01 cc 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - <- 68 0e e2 01 d0 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - -> 68 04 01 00 d0 01
+2023-10-12 06:45:15 - -> 68 0e d0 01 d0 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - <- 68 16 e4 01 d0 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:15 - -> 68 04 d2 01 d0 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - <- 68 0e e6 01 d0 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - -> 68 04 01 00 d4 01
+2023-10-12 06:45:15 - -> 68 0e d4 01 d4 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - <- 68 0e e8 01 d4 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - -> 68 04 d6 01 d4 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - <- 68 0e ea 01 d8 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - -> 68 04 01 00 d8 01
+2023-10-12 06:45:15 - -> 68 0e d8 01 d8 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - <- 68 16 ec 01 d8 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:15 - -> 68 04 da 01 d8 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - <- 68 0e ee 01 d8 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - -> 68 04 01 00 dc 01
+2023-10-12 06:45:15 - -> 68 0e dc 01 dc 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - <- 68 0e f0 01 dc 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - -> 68 04 de 01 dc 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - <- 68 0e f2 01 e0 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - -> 68 04 01 00 e0 01
+2023-10-12 06:45:15 - -> 68 0e e0 01 e0 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - <- 68 16 f4 01 e0 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:15 - -> 68 04 e2 01 e0 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - <- 68 0e f6 01 e0 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - -> 68 04 01 00 e4 01
+2023-10-12 06:45:15 - -> 68 0e e4 01 e4 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - <- 68 0e f8 01 e4 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - -> 68 04 e6 01 e4 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - <- 68 0e fa 01 e8 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - -> 68 04 01 00 e8 01
+2023-10-12 06:45:15 - -> 68 0e e8 01 e8 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - <- 68 16 fc 01 e8 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:15 - -> 68 04 ea 01 e8 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - <- 68 0e fe 01 e8 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - -> 68 04 01 00 ec 01
+2023-10-12 06:45:15 - -> 68 0e ec 01 ec 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - <- 68 0e 00 02 ec 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - -> 68 04 ee 01 ec 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - <- 68 0e 02 02 f0 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - -> 68 04 01 00 f0 01
+2023-10-12 06:45:15 - -> 68 0e f0 01 f0 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - <- 68 16 04 02 f0 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:15 - -> 68 04 f2 01 f0 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:15 - <- 68 0e 06 02 f0 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - -> 68 04 01 00 f4 01
+2023-10-12 06:45:16 - -> 68 0e f4 01 f4 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - <- 68 0e 08 02 f4 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - -> 68 04 f6 01 f4 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - <- 68 0e 0a 02 f8 01 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - -> 68 04 01 00 f8 01
+2023-10-12 06:45:16 - -> 68 0e f8 01 f8 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - <- 68 16 0c 02 f8 01 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:16 - -> 68 04 fa 01 f8 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - <- 68 0e 0e 02 f8 01 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - -> 68 04 01 00 fc 01
+2023-10-12 06:45:16 - -> 68 0e fc 01 fc 01 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - <- 68 0e 10 02 fc 01 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - -> 68 04 fe 01 fc 01 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - <- 68 0e 12 02 00 02 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - -> 68 04 01 00 00 02
+2023-10-12 06:45:16 - -> 68 0e 00 02 00 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - <- 68 16 14 02 00 02 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:16 - -> 68 04 02 02 00 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - <- 68 0e 16 02 00 02 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - -> 68 04 01 00 04 02
+2023-10-12 06:45:16 - -> 68 0e 04 02 04 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - <- 68 0e 18 02 04 02 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - -> 68 04 06 02 04 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - <- 68 0e 1a 02 08 02 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - -> 68 04 01 00 08 02
+2023-10-12 06:45:16 - -> 68 0e 08 02 08 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - <- 68 16 1c 02 08 02 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:16 - -> 68 04 0a 02 08 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - <- 68 0e 1e 02 08 02 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - -> 68 04 01 00 0c 02
+2023-10-12 06:45:16 - -> 68 0e 0c 02 0c 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - <- 68 0e 20 02 0c 02 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - -> 68 04 0e 02 0c 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - <- 68 0e 22 02 10 02 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - -> 68 04 01 00 10 02
+2023-10-12 06:45:16 - -> 68 0e 10 02 10 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - <- 68 16 24 02 10 02 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:16 - -> 68 04 12 02 10 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - <- 68 0e 26 02 10 02 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - -> 68 04 01 00 14 02
+2023-10-12 06:45:16 - -> 68 0e 14 02 14 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - <- 68 0e 28 02 14 02 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - -> 68 04 16 02 14 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - <- 68 0e 2a 02 18 02 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - -> 68 04 01 00 18 02
+2023-10-12 06:45:16 - -> 68 0e 18 02 18 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - <- 68 16 2c 02 18 02 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:16 - -> 68 04 1a 02 18 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:16 - <- 68 0e 2e 02 18 02 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - -> 68 04 01 00 1c 02
+2023-10-12 06:45:17 - -> 68 0e 1c 02 1c 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - <- 68 0e 30 02 1c 02 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - -> 68 04 1e 02 1c 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - <- 68 0e 32 02 20 02 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - -> 68 04 01 00 20 02
+2023-10-12 06:45:17 - -> 68 0e 20 02 20 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - <- 68 16 34 02 20 02 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:17 - -> 68 04 22 02 20 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - <- 68 0e 36 02 20 02 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - -> 68 04 01 00 24 02
+2023-10-12 06:45:17 - -> 68 0e 24 02 24 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - <- 68 0e 38 02 24 02 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - -> 68 04 26 02 24 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - <- 68 0e 3a 02 28 02 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - -> 68 04 01 00 28 02
+2023-10-12 06:45:17 - -> 68 0e 28 02 28 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - <- 68 16 3c 02 28 02 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:17 - -> 68 04 2a 02 28 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - <- 68 0e 3e 02 28 02 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - -> 68 04 01 00 2c 02
+2023-10-12 06:45:17 - -> 68 0e 2c 02 2c 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - <- 68 0e 40 02 2c 02 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - -> 68 04 2e 02 2c 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - <- 68 0e 42 02 30 02 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - -> 68 04 01 00 30 02
+2023-10-12 06:45:17 - -> 68 0e 30 02 30 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - <- 68 16 44 02 30 02 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:17 - -> 68 04 32 02 30 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - <- 68 0e 46 02 30 02 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - -> 68 04 01 00 34 02
+2023-10-12 06:45:17 - -> 68 0e 34 02 34 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - <- 68 0e 48 02 34 02 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - -> 68 04 36 02 34 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - <- 68 0e 4a 02 38 02 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - -> 68 04 01 00 38 02
+2023-10-12 06:45:17 - -> 68 0e 38 02 38 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - <- 68 16 4c 02 38 02 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:17 - -> 68 04 3a 02 38 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - <- 68 0e 4e 02 38 02 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - -> 68 04 01 00 3c 02
+2023-10-12 06:45:17 - -> 68 0e 3c 02 3c 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - <- 68 0e 50 02 3c 02 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - -> 68 04 3e 02 3c 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:17 - <- 68 0e 52 02 40 02 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - -> 68 04 01 00 40 02
+2023-10-12 06:45:18 - -> 68 0e 40 02 40 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - <- 68 16 54 02 40 02 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:18 - -> 68 04 42 02 40 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - <- 68 0e 56 02 40 02 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - -> 68 04 01 00 44 02
+2023-10-12 06:45:18 - -> 68 0e 44 02 44 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - <- 68 0e 58 02 44 02 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - -> 68 04 46 02 44 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - <- 68 0e 5a 02 48 02 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - -> 68 04 01 00 48 02
+2023-10-12 06:45:18 - -> 68 0e 48 02 48 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - <- 68 16 5c 02 48 02 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:18 - -> 68 04 4a 02 48 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - <- 68 0e 5e 02 48 02 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - -> 68 04 01 00 4c 02
+2023-10-12 06:45:18 - -> 68 0e 4c 02 4c 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - <- 68 0e 60 02 4c 02 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - -> 68 04 4e 02 4c 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - <- 68 0e 62 02 4e 02 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - -> 68 04 01 00 50 02
+2023-10-12 06:45:18 - -> 68 0e 50 02 50 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - <- 68 16 64 02 50 02 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:18 - -> 68 04 52 02 50 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - <- 68 0e 66 02 50 02 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - -> 68 04 01 00 54 02
+2023-10-12 06:45:18 - -> 68 0e 54 02 54 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - <- 68 0e 68 02 54 02 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - -> 68 04 56 02 54 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - <- 68 0e 6a 02 58 02 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - -> 68 04 01 00 58 02
+2023-10-12 06:45:18 - -> 68 0e 58 02 58 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - <- 68 16 6c 02 58 02 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:18 - -> 68 04 5a 02 58 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - <- 68 0e 6e 02 58 02 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - -> 68 04 01 00 5c 02
+2023-10-12 06:45:18 - -> 68 0e 5c 02 5c 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - <- 68 0e 70 02 5c 02 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - -> 68 04 5e 02 5c 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - <- 68 0e 72 02 60 02 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - -> 68 04 01 00 60 02
+2023-10-12 06:45:18 - -> 68 0e 60 02 60 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - <- 68 16 74 02 60 02 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:18 - -> 68 04 62 02 60 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - <- 68 0e 76 02 60 02 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - -> 68 04 01 00 64 02
+2023-10-12 06:45:18 - -> 68 0e 64 02 64 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - <- 68 0e 78 02 64 02 65 01 6c 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - -> 68 04 66 02 64 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:18 - <- 68 0e 7a 02 68 02 64 01 07 00 ff ff 00 00 00 05
+2023-10-12 06:45:19 - -> 68 04 01 00 68 02
+2023-10-12 06:45:19 - -> 68 0e 68 02 68 02 65 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:19 - <- 68 16 7c 02 68 02 0b 83 14 00 ff ff 01 00 00 00 80 00 0a 00 00 fb ff 00
+2023-10-12 06:45:19 - -> 68 04 6a 02 68 02 64 01 06 00 ff ff 00 00 00 05
+2023-10-12 06:45:19 - <- 68 0e 7e 02 68 02 64 01 0a 00 ff ff 00 00 00 05
+2023-10-12 06:45:19 - -> 68 04 01 00 6c 02

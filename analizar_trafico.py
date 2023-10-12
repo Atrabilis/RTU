@@ -49,14 +49,14 @@ def analizar_iec104(mensaje, direccion):
     elif apdu_format == "I":
         # Verificar la longitud de ASDU
         if len(asdu) < 6:
-            raise Exception("ASDU demasiado corto")
+            type_id= sq= num_objects= t= pn= cot= org= asdu_address= info_objects= element_len = None
+        else:
+            # Decodificar campos de ASDU
+            type_id, sq, num_objects, t, pn, cot, org, asdu_address, info_objects, element_len = decode_asdu_fields(asdu)
 
-        # Decodificar campos de ASDU
-        type_id, sq, num_objects, t, pn, cot, org, asdu_address, info_objects, element_len = decode_asdu_fields(asdu)
-
-        # Obtener información adicional de los DataFrames
-        type_info, cot_info, description, reference, cot_name, cot_abbr = get_additional_info(
-            asdu_types_df, cot_values_df, type_id, cot)
+            # Obtener información adicional de los DataFrames
+            type_info, cot_info, description, reference, cot_name, cot_abbr = get_additional_info(
+                asdu_types_df, cot_values_df, type_id, cot)
 
     # Preparar el resultado
     
@@ -213,4 +213,4 @@ def analizar_archivo(nombre_archivo):
         imprimir_resultados(res)
 
 if __name__ == "__main__":
-    analizar_archivo("traffic_test_java_server.txt")
+    analizar_archivo("traffic_test_freya_server.txt")
