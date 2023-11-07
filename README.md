@@ -27,6 +27,3 @@ cd RTU
 ## Prerequisites
 - Python 3.x
 - Knowledge of SCADA systems and IEC 60870-5-104 protocol
-
-License
-This project is licensed under the MIT License - see the LICENSE.md file for details.
